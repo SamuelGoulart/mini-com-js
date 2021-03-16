@@ -31,6 +31,6 @@ O Linktree é uma ferramenta que permite ao usuário divulgar os links de todas 
 
 Aberte no Botão para ir pro Preview do Projeto
 
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/Linktree)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/Linktree/index.html)
 
 
