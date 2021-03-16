@@ -15,7 +15,7 @@
 Clone do Linktree que é uma página de destino de referência de mídia social.
 
 O Linktree é uma ferramenta que permite ao usuário divulgar os links de todas as suas redes sociais na bio do Instagram. Ela costuma ser muito utilizada 
-<br>por influenciadores digitais para divulgar outras redes e por empresas, que inserem os sites para venda de seus produtos.
+por influenciadores digitais para divulgar outras redes e por empresas, que inserem os sites para venda de seus produtos.
 
 &nbsp;&nbsp;&nbsp; 
 
