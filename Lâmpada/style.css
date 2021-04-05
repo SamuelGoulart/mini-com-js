@@ -1,0 +1,19 @@
+
+h1{
+    text-align: center;
+    margin-top: 40px;
+}
+#lampada{
+    display: block;
+    margin: auto;
+    width: 240px;
+}
+
+#button{
+    width: 304px;
+    margin: auto;
+}
+button{
+    width: 150px;
+    font-size: 20px;
+}
