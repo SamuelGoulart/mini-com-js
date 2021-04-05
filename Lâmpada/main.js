@@ -1,6 +1,4 @@
 
-const  lampada = document.getElementById("lampada");
-
 function ligarLampada() {
  document.getElementById("lampada").setAttribute("src", "img/ligada.jpg");
 }

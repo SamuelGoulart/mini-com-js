@@ -1,0 +1,12 @@
+#sect_semaforo{
+    margin: auto;
+    display: block;
+    width: 185px;
+}
+#coresSemaforo{
+    width: 420px;
+    margin: auto;
+}
+button{
+    width: 100px;
+}
