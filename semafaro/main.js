@@ -8,11 +8,8 @@ function amarelo() {
     document.getElementById("img_semaforo").setAttribute("src", "img/amarelo.png");
 }
 
-
-
-var img_semaforo = document.getElementById("img_semaforo");
-var img_array = ["img/vermelho.png", "img/amarelo.png", "img/verde.png"];
-var index = 0;
+const img_array = ["img/vermelho.png", "img/amarelo.png", "img/verde.png"];
+let index = 0;
 function slide() {
 
     document["img_semaforo"].src = img_array[index];

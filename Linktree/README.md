@@ -30,7 +30,7 @@ por influenciadores digitais para divulgar outras redes e por empresas, que inse
 
 <h2>🔥 Preview </h2>
 
-Aberte no Botão para ir pro Preview do Projeto
+Clique no botão para ir até preview do projeto.
 
 [![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/Linktree/index.html)
 
