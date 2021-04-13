@@ -33,6 +33,7 @@ Link dos exercícios:
 
 Clique no botão para ir até preview do problema 1000. 
 [![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/URI/1000/index.html)
+
 Clique no botão para ir até preview do problema 1001. 
 
 [![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/URI/1001/index.html)
