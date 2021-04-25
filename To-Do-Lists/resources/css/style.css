@@ -127,6 +127,7 @@ body{
 
       html,body{
           overflow-x: hidden !important ;
+          font-size: 14px;
       } 
       #tarefa{
         width: 80vw;
