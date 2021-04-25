@@ -127,14 +127,14 @@ body{
 
       html,body{
           overflow-x: hidden !important ;
-          font-size: 10px;
+          font-size: 12px;
       } 
       #tarefa{
-        width: 100vw;
+        width: 98vw;
       }
       .tarefaInserada{
           width: 82vw;
-          height: 15px;
+          height: 21px;
       }
       #newItem{
           width: 90vw;
@@ -145,14 +145,13 @@ body{
           margin-right: 10vw;
       }
       .todo__item {
-        grid-template-columns: 9vw 85vw 9vw;
+        grid-template-columns: 9vw 83vw 9vw;
         padding-top: 15px;
     }
     .todo__item > input[type='checkbox'] {
-        width: 5vw;
-        height: 25px;
-        margin-left: 5px;
-        margin-top: -4px;
+        width: 15vw;
+        height: 21px;
+        margin-left: -10px;
   }
 
 }
