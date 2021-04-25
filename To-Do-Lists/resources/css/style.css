@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("../img/plano_de_fundo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#titulo{
+    text-align: center;
+    margin: 25px;
+}
+
+#tarefa{
+    margin: auto;
+    width: 40vw;
+    height: 80vh;
+    background: #59b4d1AA;
+    border-radius: 8px 8px 8px 8px; 
+}
+.todo__item{
+    display: grid;
+    grid-template-columns: 3vw 33vw 3vw;
+    padding-top: 30px;
+}
+
+.checkbox{
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+}
+
+
+.todo__item > input[type='button'],
+.todo__item > input[type='checkbox']{
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+}
+
+.todo__item > input[type='checkbox']:checked  + div {
+    text-decoration:line-through;
+}
+
+
+.tarefaInserada{
+    background-color: white;
+    width: 32vw;
+    height: 25px;
+    font-size: 1.5em;
+    text-align: center;
+    border-radius: 8px 8px 8px 8px; 
+}
+
+.newTarefa > button{
+    background-color: #59b4d111;
+    border: 0px;
+}
+
+#newItem::-webkit-input-placeholder {
+        text-align: center;
+}
+
+.iconeLixeira{
+    border: 0;
+    background-image: url("../img/lixeira.png") !important;
+    background-repeat: no-repeat;
+    background-color: #59b4d111;
+    margin-top: -1px;
+}
+
+#newItem{
+    width: 36vw; 
+    height: 35px; 
+    margin-top: 45px;
+    margin-left: 25px;
+    border: white;
+    border-radius: 8px 8px 8px 8px; 
+}
+
+#btn_inserir{
+    border: 0;
+    background-color: #59b4d111;
+    color: white;
+    font-size: 20px;
+    margin-left: 10px;
+     
+}
+
+
+@media only screen and (max-width: 1200px) {
+    #tarefa{
+        width: 60vw;
+    }
+     .tarefaInserada{
+         width: 50vw;
+    }
+    .todo__item {
+        grid-template-columns: 5vw 50vw 3vw;
+    }
+
+    #newItem{
+        width: 55vw;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    #tarefa{
+        width: 80vw;
+    }
+     .tarefaInserada{
+         width: 65vw;
+    }
+    .todo__item {
+        grid-template-columns: 5vw 66vw 3vw;
+    }
+
+    #newItem{
+        width: 72vw;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+
+      html,body{
+          overflow-x: hidden !important ;
+      } 
+      #tarefa{
+        width: 80vw;
+      }
+      .tarefaInserada{
+          width: 62vw;
+      }
+      #newItem{
+          width: 70vw;
+          margin-left: 5vw;
+      }
+      .iconeLixeira{
+          margin-right: 10vw;
+      }
+      .todo__item {
+        grid-template-columns: 9vw 63vw 9vw;
+        padding-top: 30px;
+    }
+    .todo__item > input[type='checkbox'] {
+        width: 7vw;
+        height: 25px;
+        margin-left: 5px;
+  }
+
+}
+
+@media only screen and (max-width: 470px) {
+    .iconeLixeira{
+        margin-left: 0px !important;
+    }
+}
