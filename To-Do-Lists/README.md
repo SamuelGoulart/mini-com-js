@@ -2,16 +2,12 @@
 
 [![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/To-Do-Lists/index.html)
 
-</h2>
-
 <h1  align="center" >To-Do Lists</h1>
 
-
-<h2 align="right" >🔥 Preview 
-
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/To-Do-Lists/index.html)
-
 </h2>
+
+
+
 
 <img align="right" src="./gif_readme/to_do_list.gif" alt="Gif do To-do lists">
 
