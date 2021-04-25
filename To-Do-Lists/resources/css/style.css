@@ -127,29 +127,32 @@ body{
 
       html,body{
           overflow-x: hidden !important ;
-          font-size: 14px;
+          font-size: 10px;
       } 
       #tarefa{
-        width: 80vw;
+        width: 100vw;
       }
       .tarefaInserada{
-          width: 62vw;
+          width: 82vw;
+          height: 15px;
       }
       #newItem{
-          width: 70vw;
+          width: 90vw;
           margin-left: 5vw;
       }
       .iconeLixeira{
+          background-image: url("../img/lixeiraCelular.png") !important;
           margin-right: 10vw;
       }
       .todo__item {
-        grid-template-columns: 9vw 63vw 9vw;
-        padding-top: 30px;
+        grid-template-columns: 9vw 85vw 9vw;
+        padding-top: 15px;
     }
     .todo__item > input[type='checkbox'] {
-        width: 7vw;
+        width: 5vw;
         height: 25px;
         margin-left: 5px;
+        margin-top: -4px;
   }
 
 }
