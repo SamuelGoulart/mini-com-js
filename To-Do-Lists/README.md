@@ -13,13 +13,14 @@
 [![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/To-Do-Lists/index.html)
 [![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/To-Do-Lists/index.html)
 
+</br>
+
 <h1  align="center" >To-Do Lists</h1>
+  
+</br>
+</br>
 
 </h2>
-
-
-
-
 
 <img align="right" src="./gif_readme/to_do_list.gif" alt="Gif do To-do lists">
 
@@ -45,7 +46,7 @@ Este mini-projeto foi desenvolvimento durante atividade do curso de Técnico de 
   <li>HTML</li>
   <li>CSS</li>
   <li>JavaScript</li>
-</ul>[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/To-Do-Lists/index.html)
+</ul>
 
 
 <h2>🔥 Preview </h2>
