@@ -24,8 +24,6 @@ const limparTarefas = () => {
 
 }
 
-
-
 const atualizarTela = () => {
     limparTarefas();
     const banco = getBanco();

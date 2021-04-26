@@ -70,6 +70,14 @@ body{
     background-repeat: no-repeat;
     background-color: #59b4d111;
     margin-top: -1px;
+    cursor: pointer;
+}
+
+.iconeLixeira:hover{
+    background-image: url("../img/lixeiraVermelha.png") !important;
+    height: 35px !important;
+    width: 30px !important;
+    margin-top: -7px;
 }
 
 #newItem{
@@ -79,6 +87,8 @@ body{
     margin-left: 25px;
     border: white;
     border-radius: 8px 8px 8px 8px; 
+    text-align: center; 
+
 }
 
 #btn_inserir{

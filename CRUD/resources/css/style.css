@@ -1,0 +1,187 @@
+/* Estilizações globais */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input::-webkit-input-placeholder {
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    border-radius: 4px;
+}
+
+header {
+    width: 100vw;
+    height: 100px;
+    background-color: blue;
+    text-align: center;
+    color: white;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* Formação de Todos os botãos */
+
+.btnCancelar_Excluir {
+    background-color: #dc3545;
+    color: white;
+    margin-right: 55px;
+}
+
+.btnCancelar_Excluir:hover {
+    background-color: white;
+    color: black;
+    border: 2px #dc3545 solid;
+    transition-duration: 0.8s;
+}
+
+.btnSalvar_Editar {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btnSalvar_Editar:hover {
+    background-color: white;
+    color: black;
+    border: 2px #4CAF50 solid;
+    transition-duration: 0.8s;
+}
+
+#btnCadastrarCliente {
+    height: 40px;
+    width: 150px;
+    margin: 50px 0px 50px 20px;
+}
+
+/* Modal */
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 16rem;
+}
+
+.modal-content>h2 {
+    text-align: center;
+    margin: 15px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Formulário dentro do modal */
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 5rem;
+    grid-template-rows: 40px 30px 40px;
+    /* Mudar o tamanho da linhas  */
+}
+
+#form>input {
+    width: 30vw;
+    margin: auto;
+    margin: 10px 0px 0px 10px;
+    height: 30px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+#form>select {
+    width: 30vw;
+    height: 30px;
+    margin: 10px 0px 0px 11px;
+}
+
+#form>div {
+    margin-top: 15px;
+}
+
+#form>div>button {
+    width: 85px;
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 30px;
+    float: right;
+}
+
+/* --------Fim do Modal  -- ------- */
+
+/* Campos */
+
+#informacao {
+    background-color: steelblue;
+}
+
+.campos {
+    width: 90vw;
+    height: 50px;
+    margin: auto;
+    display: table;
+    font-size: 1.5rem;
+}
+
+.campos>p {
+    color: white;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* Dados inseridos  */
+
+.linhasCadastrado>p {
+    color: black;
+    padding-left: 10px;
+}
+
+#dadosInseridos {
+    display: flex;
+    box-shadow: 0px 1px 5px 0px rgb(0 0 0 / 50%);
+    width: 90vw;
+    margin: auto;
+    font-size: 1.5rem;
+}
+
+.campos>div>button {
+    width: 85px;
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 1rem;
+    float: right;
+    cursor: pointer;
+}

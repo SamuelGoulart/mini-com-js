@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <title>CRUD</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1> Clientes - LionWeb</h1>
+    </header>
+
+    <!-- Modal é botão de acionamento do modal -->
+    <button id="btnCadastrarCliente" class="btnSalvar_Editar" >Cadastrar Cliente</button>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>NOVO CLIENTE</h2>
+            <form id="form">
+                <input type="text" placeholder="Nome completo">
+                <input type="email" placeholder="E-email">
+                <input type="number" placeholder="Celular">
+                <select value="cidade">
+                    <option value="br">Barueri</option>
+                    <option value="ca">Carapicuiba</option>
+                    <option value="co">Cotia</option>
+                    <option value="jd">Jandira</option>
+                    <option value="it">Itapevi</option>
+                    <option value="os">Osasco</option>
+                    <option value="sp">Santana de Parnaíba </option>
+                </select>
+                <br>
+                <div>
+                    <button id="btnCancelar" class="btnCancelar_Excluir"> Cancelar</button>
+                    <button class="btnSalvar_Editar">Salvar</button>
+                </div>
+
+
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Campos -->
+    <div id="informacao" class="campos">
+        <p>Nome</p>
+        <p>E-mail</p>
+        <p>Celular</p>
+        <p>Cidade</p>
+        <p>Ação</p>
+    </div>
+
+    <!-- Dados inseridos -->
+    <div>
+        <div id="dadosInseridos">
+            <div class="campos linhasCadastrado">
+                <p>Maria da silva</p>
+                <p>maria@hmail.com</p>
+                <p>(11)97165-7461</p>
+                <p>São Roque</p>
+                <div>
+                    <button class="btnSalvar_Editar" >Editar</button>
+                    <button class="btnCancelar_Excluir">Excluir</button>
+                </div>
+            </div>
+        </div>
+        <div id="dadosInseridos">
+            <div class="campos linhasCadastrado">
+                <p>Maria da silva</p>
+                <p>maria@hmail.com</p>
+                <p>(11)97165-7461</p>
+                <p>São Roque</p>
+                <div>
+                    <button class="btnSalvar_Editar" >Editar</button>
+                    <button class="btnCancelar_Excluir">Excluir</button>
+                </div>
+            </div>
+        </div>
+        <div id="dadosInseridos">
+            <div class="campos linhasCadastrado">
+                <p>Maria da silva</p>
+                <p>maria@hmail.com</p>
+                <p>(11)97165-7461</p>
+                <p>São Roque</p>
+                <div>
+                    <button class="btnSalvar_Editar" >Editar</button>
+                    <button class="btnCancelar_Excluir">Excluir</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./resources/js/modal.js"></script>
+</body>
+
+</html>
