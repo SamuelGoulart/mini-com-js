@@ -1,15 +1,24 @@
 <h2 align="left" >🔥 Preview 
+  
+</br>
+</br>
 
 [![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/To-Do-Lists/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/To-Do-Lists/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/To-Do-Lists/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/To-Do-Lists/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/To-Do-Lists/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/To-Do-Lists/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/To-Do-Lists/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/To-Do-Lists/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/To-Do-Lists/index.html)
 
-</h2>
+</br>
 
 <h1  align="center" >To-Do Lists</h1>
-
-
-<h2 align="right" >🔥 Preview 
-
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/To-Do-Lists/index.html)
+  
+</br>
+</br>
 
 </h2>
 
@@ -38,6 +47,7 @@ Este mini-projeto foi desenvolvimento durante atividade do curso de Técnico de 
   <li>CSS</li>
   <li>JavaScript</li>
 </ul>
+
 
 <h2>🔥 Preview </h2>
 
