@@ -1,6 +1,6 @@
 <h2 align="left" >🔥 Preview 
 
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/CRUD/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/CRUD/)
 
 </h2>
 
@@ -36,4 +36,4 @@ Criação de uma tela de cadastro de clientes
 
 Clique no botão para ir até preview do projeto.
 
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/CRUD/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/CRUD/)
