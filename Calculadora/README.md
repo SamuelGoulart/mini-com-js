@@ -21,6 +21,8 @@
 
 </h2>
 
+<img align="right" src="https://user-images.githubusercontent.com/62961331/116889853-6d167600-ac03-11eb-908c-d88514d298fd.gif" alt="Gif do To-do lists">
+
 
 <h2>📕 Indice</h2>
 
@@ -31,6 +33,7 @@
 </ul>
 
 <h2>💻Sobre o projeto</h2>
+
 
 Calculadora executa as 4 operações matemáticas, usando o mouse ou teclado.
 
