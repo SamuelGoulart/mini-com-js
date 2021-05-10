@@ -15,16 +15,16 @@
     </header>
 
     <!-- Modal é botão de acionamento do modal -->
-    <button id="btnCadastrarCliente" class="btnSalvar_Editar" >Cadastrar Cliente</button>
+    <button id="btnCadastrarCliente" class="btnSalvar_Editar">Cadastrar Cliente</button>
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>NOVO CLIENTE</h2>
-            <form id="form">
-                <input type="text" placeholder="Nome completo">
-                <input type="email" placeholder="E-email">
-                <input type="number" placeholder="Celular">
-                <select value="cidade">
+            <form id="form" action="index.html" >
+                <input id="nome" type="text" placeholder="Nome completo">
+                <input id="email" type="email" placeholder="E-email">
+                <input id="celular" type="number" placeholder="Celular">
+                <select id="cidade" value="cidade">
                     <option value="br">Barueri</option>
                     <option value="ca">Carapicuiba</option>
                     <option value="co">Cotia</option>
@@ -35,8 +35,8 @@
                 </select>
                 <br>
                 <div>
-                    <button id="btnCancelar" class="btnCancelar_Excluir"> Cancelar</button>
-                    <button class="btnSalvar_Editar">Salvar</button>
+                    <button id="btnCancelar"  class="btnCancelar_Excluir"> Cancelar</button>
+                    <button id="newCadastro" type="submit" class="btnSalvar_Editar">Salvar</button>
                 </div>
 
 
@@ -55,45 +55,10 @@
     </div>
 
     <!-- Dados inseridos -->
-    <div>
-        <div id="dadosInseridos">
-            <div class="campos linhasCadastrado">
-                <p>Maria da silva</p>
-                <p>maria@hmail.com</p>
-                <p>(11)97165-7461</p>
-                <p>São Roque</p>
-                <div>
-                    <button class="btnSalvar_Editar" >Editar</button>
-                    <button class="btnCancelar_Excluir">Excluir</button>
-                </div>
-            </div>
-        </div>
-        <div id="dadosInseridos">
-            <div class="campos linhasCadastrado">
-                <p>Maria da silva</p>
-                <p>maria@hmail.com</p>
-                <p>(11)97165-7461</p>
-                <p>São Roque</p>
-                <div>
-                    <button class="btnSalvar_Editar" >Editar</button>
-                    <button class="btnCancelar_Excluir">Excluir</button>
-                </div>
-            </div>
-        </div>
-        <div id="dadosInseridos">
-            <div class="campos linhasCadastrado">
-                <p>Maria da silva</p>
-                <p>maria@hmail.com</p>
-                <p>(11)97165-7461</p>
-                <p>São Roque</p>
-                <div>
-                    <button class="btnSalvar_Editar" >Editar</button>
-                    <button class="btnCancelar_Excluir">Excluir</button>
-                </div>
-            </div>
-        </div>
+    <div id="cadastro">
 
     </div>
+    <script src="./resources/js/main.js" defer ></script>
     <script src="./resources/js/modal.js"></script>
 </body>
 

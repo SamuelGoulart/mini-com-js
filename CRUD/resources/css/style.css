@@ -152,7 +152,8 @@ form {
     width: 90vw;
     height: 50px;
     margin: auto;
-    display: table;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
     font-size: 1.5rem;
 }
 
