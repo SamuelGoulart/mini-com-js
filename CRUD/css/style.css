@@ -29,11 +29,14 @@ main button{
     align-self: flex-start ;
 }
 
-
 footer {
     height: 50px;
     background-color: #343a40;
     color: whitesmoke;
     text-align: center;
     line-height: 50px;
+}
+
+.displayNome{
+    display: none;
 }

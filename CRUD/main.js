@@ -17,9 +17,12 @@ const $ = (element) => document.querySelector(element)
 const $$ = (element) => document.querySelectorAll(element)
 
 const openModal = () => $('#modal').classList.add('active')
-const closeModal = () => {
-    $('#modal').classList.remove('active')
+const closeModal = () => {  
     $('#displayNome').classList.add('displayNome')
+    $('.editarCliente').classList.add('displayNome')
+
+    $('#novoCliente').classList.remove('displayNome')
+    $('#modal').classList.remove('active')
     $('#salvar').classList.remove('displayNome')
 }
 
@@ -109,8 +112,11 @@ const updateCliente = () => {
 
 const showdataUpdate = (index) => {
 
-    $('#salvar').classList.add('displayNome')
+    $('#salvar').classList.add('displayNome')  
+    $('#novoCliente').classList.add('displayNome')
+
     $('#displayNome').classList.remove('displayNome')
+    $('.editarCliente').classList.remove('displayNome')
 
     const banco = readDb();
 
