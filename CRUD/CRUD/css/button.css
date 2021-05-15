@@ -1,0 +1,33 @@
+.btn{
+    border-style: none;
+    padding: 0 20px;
+    min-height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn.red {
+    background-color: #ff4949;
+}
+
+.btn.blue {
+    background-color: #1fb6ff
+}
+
+.btn.green {
+    background-color: #13CE66
+}
+
+.btn.dark {
+    background-color: #343a40
+}
+
+.displayNome{
+    display: none;
+}
+
+.displayInline{
+    display: inline;
+}

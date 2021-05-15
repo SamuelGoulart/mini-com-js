@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Karla', sans-serif;
+}
+
+header {
+    height: 100px;
+    background-color: #343a40;
+    color: whitesmoke;
+    text-align: center;
+    line-height: 100px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 150px);
+    padding: 50px;
+    gap: 50px;
+}
+main button{
+    align-self: flex-start ;
+}
+
+
+footer {
+    height: 50px;
+    background-color: #343a40;
+    color: whitesmoke;
+    text-align: center;
+    line-height: 50px;
+}
