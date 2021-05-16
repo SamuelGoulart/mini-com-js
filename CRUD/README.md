@@ -1,10 +1,10 @@
-<h2 align="left" >🔥 Preview 
-
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/CRUD/)
-
 </h2>
 
 <h1 align="center" >CRUD</h1>
+
+<a href="https://samuelgoulart.github.io/Projetos-com-JavaScript/CRUD/">
+<img align="right" src="https://user-images.githubusercontent.com/62961331/118410121-4117dd80-b664-11eb-9578-835eaf17738c.gif" alt="Gif de cadastro cliente">
+</a>
 
 
 <h2>📕 Indice</h2>
@@ -18,22 +18,19 @@
 <h2>💻Sobre o projeto</h2>
 
 Criação de uma tela de cadastro de clientes
-
-  (CRUD) Create (Criação), Read (Consulta), Update (Atualização) e Delete (Destruição).
-  Utilizando o LocalStorange para o armazenamento de dados.
-
-  Projeto em Desenvolvimento.
   
-<h3>🚀 Tecnologias utilizadas</h3>
+  Para a prática do CRUD <br>
+   &nbsp; Create (Criação), <br>
+   &nbsp; Read (Consulta), <br>
+   &nbsp; Update (Atualização), <br>
+   &nbsp; Delete (Destruição).  <br>
 
-<ul>
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>JavaScript</li>
-</ul>
+  Utilizando o LocalStorange como o banco de dados.
+  
+   Projeto desenvolvido durante o curso de técnico de desenvolvimento de sistemas.
 
 <h2>🔥 Preview </h2>
 
 Clique no botão para ir até preview do projeto.
 
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/CRUD/)
+[![Preview](https://user-images.githubusercontent.com/62961331/118410582-89d09600-b666-11eb-822b-df40552531cf.png)](https://samuelgoulart.github.io/Projetos-com-JavaScript/CRUD/)
