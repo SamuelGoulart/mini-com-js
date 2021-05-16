@@ -33,6 +33,8 @@
                 
             </tbody>
         </table>
+        <div id="mensagem" data-anime="right" >
+        </div>
         <div class="modal" id="modal">
             <div class="modal__content">
                 <header class="modal__header">
@@ -42,10 +44,10 @@
                 </header>
                 <div class="modal__main">
                     <form class="form">
-                        <input class="input-field" type="text" id="nome" placeholder="Nome"/>
-                        <input class="input-field" type="text" id="email" placeholder="E-mail"/>
-                        <input class="input-field" type="text" id="celular" placeholder="Celular"/>
-                        <input class="input-field" type="text" id="cidade" placeholder="Cidade"/>
+                        <input class="input-field" type="text" id="nome" placeholder="Ex.: Samuel Goulart"/>
+                        <input class="input-field" type="text" id="email" placeholder="Ex.: nome@exemplo.com"/>
+                        <input class="input-field" onkeypress="mask(this, mphone);" type="text" id="celular" placeholder="Ex.: (00) 0000-0000"/>
+                        <input class="input-field"  type="text" id="cidade" placeholder="Ex.: São Paulo"/>
                     </form>
                 </div>
                 <footer class="modal__footer">

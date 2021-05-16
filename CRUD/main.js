@@ -16,8 +16,11 @@ const $ = (element) => document.querySelector(element)
 // $ para vários elemento
 const $$ = (element) => document.querySelectorAll(element)
 
+const divMensagem = $('#mensagem')
+
+
 const openModal = () => $('#modal').classList.add('active')
-const closeModal = () => {  
+const closeModal = () => {
     $('#displayNome').classList.add('displayNome')
     $('.editarCliente').classList.add('displayNome')
 
@@ -39,18 +42,19 @@ const readDb = () => JSON.parse(localStorage.getItem('banco')) ?? [];
 const validateInputs = () => {
 
     const inputs = Array.from($$('.modal input'))
-    
+
     if (inputs[0].value == "") {
         inputs[0].focus()
-    }else if (inputs[1].value == ""){
+    } else if (inputs[1].value == "") {
         inputs[1].focus()
-    }else if (inputs[2].value == ""){
+    } else if (inputs[2].value == "") {
         inputs[2].focus()
-    }else if (inputs[3].value == ""){
+    } else if (inputs[3].value == "") {
         inputs[3].focus()
-    }else{
+    } else {
         saveClient()
     }
+
 }
 
 const createRow = (client, index) => {
@@ -82,6 +86,9 @@ const loadTable = () => {
 }
 
 const saveClient = () => {
+    divMensagem.innerHTML = "Cadastro adicionado com sucesso!"
+    mensagem()
+
     const banco = readDb()
     const newClient = {
         nome: $('#nome').value,
@@ -97,22 +104,30 @@ const saveClient = () => {
 }
 
 const deleteClient = (index) => {
+
+    divMensagem.innerHTML = "Excluído com sucesso!"
+    mensagem()
+
     const banco = readDb()
     banco.splice(index, 1)
     localStorage.setItem('banco', JSON.stringify(banco))
     clearTable()
     loadTable()
+
 }
 
 const updateCliente = () => {
 
     saveClient()
     deleteClient()
+
+    divMensagem.innerHTML = "O cadastro editado, será o último na lista de exibição"
+    mensagem()
 }
 
 const showdataUpdate = (index) => {
 
-    $('#salvar').classList.add('displayNome')  
+    $('#salvar').classList.add('displayNome')
     $('#novoCliente').classList.add('displayNome')
 
     $('#displayNome').classList.remove('displayNome')
@@ -140,6 +155,39 @@ const btn_click = (event) => {
         showdataUpdate(index)
     }
 }
+
+const mensagem = () => {
+    $('#mensagem').classList.add('animate')
+
+    setTimeout(() => {
+        $('#mensagem').classList.remove('animate')
+    }, 6000);
+}
+
+function mask(inputNumero) {
+    setTimeout(function () {
+        const numeroSemMascara = mphone(inputNumero.value);
+        if (numeroSemMascara != inputNumero.value) {
+            inputNumero.value = numeroSemMascara;
+        }
+    }, 1);
+}
+
+function mphone(numeroSemMascara) {
+    var numeroComMascara = numeroSemMascara.replace(/\D/g, "");
+    numeroComMascara = numeroComMascara.replace(/^0/, "");
+    if (numeroComMascara.length > 10) {
+        numeroComMascara = numeroComMascara.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
+    } else if (numeroComMascara.length > 5) {
+        numeroComMascara = numeroComMascara.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+    } else if (numeroComMascara.length > 2) {
+        numeroComMascara = numeroComMascara.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
+    } else {
+        numeroComMascara = numeroComMascara.replace(/^(\d*)/, "($1");
+    }
+    return numeroComMascara;
+}
+
 
 $('#cadastrarCliente').addEventListener('click', openModal)
 
