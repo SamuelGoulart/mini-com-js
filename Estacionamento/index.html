@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema FastParking</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+</head>
+
+<body>
+    <section id="painelCadastro">
+        <h1>Sistema FastParking</h1>
+        <section id="cadastroCliente">
+            <form>
+                <label for="">Nome</label>
+                <input id="nome" type="text" placeholder="  José da silva">
+                <label for="">Placa do carro</label>
+                <input  id="placaDoCarro" placeholder="     Ex .: CHE - 5729" type="text">
+                <button id="btnSalvar">Salvar</button>
+                <button id="btnPrecos">Preços</button>
+            </form>
+        </section>
+    </section>     
+        <h1>Controle de Estacionamento</h1>
+        <table class="table" id="tabelaClientes" >    
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Placa</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                
+            </tbody>
+        </table>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
