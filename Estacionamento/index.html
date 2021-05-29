@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema FastParking</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@1,200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rosario:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 </head>
@@ -17,16 +17,17 @@
         <section id="cadastroCliente">
             <form>
                 <label for="">Nome</label>
-                <input id="nome" type="text" placeholder="  José da silva">
+                <input maxlength="17" id="nome" type="text" placeholder="    Ex .: José da silva">
                 <label for="">Placa do carro</label>
-                <input  id="placaDoCarro" placeholder="     Ex .: CHE - 5729" type="text">
-                <button id="btnSalvar">Salvar</button>
-                <button id="btnPrecos">Preços</button>
+                <input  id="placaDoCarro" required placeholder="     Ex .: CHE - 5729" type="text">
+                <button id="btnSalvar" required class="btnVerde">Salvar</button>
+                <button type="button" id="btnPrecos" class="btnAmarelo" >Preços</button>
             </form>
         </section>
-    </section>     
+    </section>
+    <main>
         <h1>Controle de Estacionamento</h1>
-        <table class="table" id="tabelaClientes" >    
+        <table class="table" id="tabelaClientes">
             <thead>
                 <tr>
                     <th>Nome</th>
@@ -37,10 +38,31 @@
                 </tr>
             </thead>
             <tbody id="tbody">
-                
+
+
             </tbody>
         </table>
+    </main>
+    <div class="modal" id="modal">
+        <div class="modal-content" >
+            <header class="modal-header">
+                <h1 id="tituloModal">Preços</h1>
+                <span class="close-button" id="close">&#10006;</span>
+            </header>
 
+            <form class="form">
+                <label for="umaHoraPreco">Até 1 hora estacionado</label>
+                <input class="input-field" data-index="" type="text" id="umaHoraPreco" placeholder="Informe o preço de até uma hora" required />
+                <label for="precoAteUmaHora" > Após 1 Hora </label>
+                <input class="input-field" type="text" id="precoAteUmaHora" placeholder="Informe o preço de até uma hora" required />
+            </form>
+
+            <footer class="modal-footer">
+                <button type="submit" class="btnVerde" id="salvarPreco">Salvar</button>
+                <button type="button" class="btnAmarelo" id="cancelar">Cancelar</button>
+            </footer>
+        </div>
+    </div>
     <script src="./main.js"></script>
 </body>
 

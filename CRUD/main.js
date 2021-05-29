@@ -121,7 +121,6 @@ const updateCliente = () => {
     saveClient()
     deleteClient()
 
-    divMensagem.innerHTML = "O cadastro editado, será o último na lista de exibição"
     mensagem()
 }
 
