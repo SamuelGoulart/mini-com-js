@@ -1,10 +1,20 @@
 'use strict';
 
-const openModal = () => document.querySelector('#modal')
+const openModalPrice = () => document.querySelector('#modalPreco')
     .classList.add('active')
 
-const closeModal = () => document.querySelector('#modal')
+const openModalEditPrice = () => document.querySelector('#modalEditar')
+    .classList.add('active')
+
+const openModalProof = () => document.querySelector('#modalComprovante')
+    .classList.add('active')
+
+const closeModalPrice = () => document.querySelector('#modalPreco')
     .classList.remove('active')
+
+const closeModalEditData = () => document.querySelector('#modalEditar')
+    .classList.remove('active')
+
 
 const readDB = () => JSON.parse(localStorage.getItem('bank')) ?? []
 
@@ -24,12 +34,28 @@ const insertDB = (dadosCadastro) => {
 }
 
 const insertDBPrice = (registrationPrice) => {
-    // 1 - ler(abrir) o banco de dados
     const bankPrice = readDBPrice()
-    // 2 - adicionar o novo cliente
     bankPrice.push(registrationPrice)
-    // 3 - enviar(salvar) ou fechar o banco de dados
     setDBPrice(bankPrice)
+}
+
+const updateClient = () => {
+
+    const updatedData = {
+        name: document.querySelector('#nomeEditar').value,
+        hescores: document.querySelector('#placaEditar').value,
+        date: document.querySelector('#dataEditar').value,
+        time: document.querySelector('#horaEditar').value
+    }
+
+    const index = document.querySelector('#nomeEditar').dataset.index
+
+    const db = readDB()
+    db[index] = updatedData
+    setDB(db)
+
+    closeModalEditData()
+    updateTable()
 }
 
 const createRegistration = (dadosCadastro, index) => {
@@ -40,8 +66,8 @@ const createRegistration = (dadosCadastro, index) => {
     <td>${dadosCadastro.date}</td>
     <td>${dadosCadastro.time}</td>
     <td>
-        <button type="button" class="btnVerde" >Comprovante</button>
-        <button type="button" class="btnAmarelo"  id="editar" data-action="editar-${index}">Editar</button>
+        <button type="button" class="btnVerde" data-action="comprovante-${index}" >Comprovante</button>
+        <button type="button" class="btnAmarelo" data-action="editar-${index}">Editar</button>
         <button type="button" class="btnExcluir" data-action="deletar-${index}">Excluir</button>
     </td>`
 
@@ -96,6 +122,7 @@ const saveClient = () => {
         date: date(),
         time: hour()
     }
+
     insertDB(newClient)
 
     updateTable()
@@ -105,19 +132,27 @@ const saveClient = () => {
 
 const savePrice = () => {
 
+    const dbPrice = readDBPrice()
     const price = {
         onehourPrice: document.querySelector('#umaHoraPreco').value,
         otherHoursPrice: document.querySelector('#precoAteUmaHora').value
     }
 
-    insertDBPrice(price)
+    if (dbPrice == '') {
 
-    closeModal()
+        insertDBPrice(price)
+    } else {
+        dbPrice[0] = price
+        setDBPrice(dbPrice)
+    }
+
+    closeModalPrice()
+
 }
 
 const deleteClient = (index) => {
     const db = readDB()
-    const resp = confirm(`Deseja realmente deletar ${db[index].nome}?`)
+    const resp = confirm(`Deseja realmente deletar ${db[index].name}?`)
 
     if (resp) {
         db.splice(index, 1)
@@ -128,15 +163,32 @@ const deleteClient = (index) => {
 
 
 const editClient = (index) => {
+
     const db = readDB()
-    document.querySelector('#nome').value = db[index].nome
-    document.querySelector('#email').value = db[index].email
-    document.querySelector('#celular').value = db[index].celular
-    document.querySelector('#cidade').value = db[index].cidade
-    document.querySelector('#nome').dataset.index = index
-    openModal();
+
+    document.querySelector('#nomeEditar').value = db[index].name
+    document.querySelector('#placaEditar').value = db[index].hescores
+    document.querySelector('#dataEditar').value = db[index].date
+    document.querySelector('#horaEditar').value = db[index].time
+    document.querySelector('#nomeEditar').dataset.index = index
+
+    openModalEditPrice()
 }
 
+const showModalPrice = () => {
+
+    const dbPrice = readDBPrice()
+    console.log(dbPrice)
+
+    document.querySelector('#umaHoraPreco').value = dbPrice[0].onehourPrice
+    document.querySelector('#precoAteUmaHora').value = dbPrice[0].otherHoursPrice
+
+}
+
+const proof = () =>{
+    openModalProof()
+
+}
 
 const actionButttons = (event) => {
     const element = event.target
@@ -144,26 +196,37 @@ const actionButttons = (event) => {
         const action = element.dataset.action.split('-')
         if (action[0] === 'deletar') {
             deleteClient(action[1])
-        } else (
+        } else if (action[0]== 'editar') {
             editClient(action[1])
-        )
+        }else{
+            proof(action[1])
+        }
     }
 }
 
-document.querySelector('#btnPrecos')
-    .addEventListener('click', openModal)
+document.querySelector('#btnPreco')
+    .addEventListener('click', () => { openModalPrice(); showModalPrice() })
 
 document.querySelector('#salvarPreco')
     .addEventListener('click', savePrice)
 
 document.querySelector('#close')
-    .addEventListener('click', () => { closeModal(); clearInput() })
+    .addEventListener('click', () => { closeModalPrice(); clearInput() })
+
+document.querySelector('#closeEditar')
+    .addEventListener('click', () => { closeModalEditData(); clearInput() })
 
 document.querySelector('#cancelar')
-    .addEventListener('click', () => { closeModal(); clearInput() })
+    .addEventListener('click', () => { closeModalPrice(); clearInput() })
+
+document.querySelector('#cancelarEditarDados')
+    .addEventListener('click', () => { closeModalEditData(); clearInput() })
 
 document.querySelector('#btnSalvar')
     .addEventListener('click', saveClient)
+
+document.querySelector('#btnAtualizarCliente')
+    .addEventListener('click', updateClient)
 
 document.querySelector('#tabelaClientes')
     .addEventListener('click', actionButttons)

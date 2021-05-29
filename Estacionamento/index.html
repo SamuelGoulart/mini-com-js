@@ -17,11 +17,11 @@
         <section id="cadastroCliente">
             <form>
                 <label for="">Nome</label>
-                <input maxlength="17" id="nome" type="text" placeholder="    Ex .: José da silva">
+                <input maxlength="17" id="nome" data-index="" type="text" placeholder="    Ex .: José da silva">
                 <label for="">Placa do carro</label>
                 <input  id="placaDoCarro" required placeholder="     Ex .: CHE - 5729" type="text">
                 <button id="btnSalvar" required class="btnVerde">Salvar</button>
-                <button type="button" id="btnPrecos" class="btnAmarelo" >Preços</button>
+                <button type="button" id="btnPreco" class="btnAmarelo" >Preços</button>
             </form>
         </section>
     </section>
@@ -43,7 +43,7 @@
             </tbody>
         </table>
     </main>
-    <div class="modal" id="modal">
+    <div class="modal" id="modalPreco" >
         <div class="modal-content" >
             <header class="modal-header">
                 <h1 id="tituloModal">Preços</h1>
@@ -63,6 +63,77 @@
             </footer>
         </div>
     </div>
+
+    <div class="modal" id="modalEditar" >
+        <div class="modal-content" >
+            <header class="modal-header">
+                <h1 id="tituloModal">Editar Dados</h1>
+                <span class="close-button" id="closeEditar">&#10006;</span>
+            </header>
+
+            <form id="form-editar-Cadastro"  >
+                <div class="input-container">
+                    <input id="nomeEditar" data-index="" class="input" type="text" required />
+                    <label style="margin-top: 2rem;" class="label" for="nomeEditar">Nome</label>
+                </div>
+                <div class="input-container">
+                    <input id="placaEditar" class="input" type="text"  required />
+                    <label class="label inputSengundoAdiante" for="placaEditar">Placa do carro</label>
+                </div>
+                <div class="input-container">
+                    <input id="dataEditar" class="input" type="text"  required />
+                    <label class="label inputSengundoAdiante" for="dataEditar">Data</label>
+                </div>
+                <div class="input-container">
+                    <input id="horaEditar" class="input" type="text"  required />
+                    <label class="label inputSengundoAdiante" for="horaEditar">Hora</label>
+                </div>
+            </form>
+
+            <footer class="modal-footer">
+                <button type="submit" class="btnVerde" id="btnAtualizarCliente">Salvar alterações</button>
+                <button type="button" class="btnAmarelo" id="cancelarEditarDados">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+    
+    <div class="modal" id="modalComprovante" >
+        <div class="modal-content" >
+            <header class="modal-header">
+                <h1 id="tituloModal">Imprimir</h1>
+                <span class="close-button" id="closeEditar">&#10006;</span>
+            </header>
+
+            <form id="form-editar-Cadastro"  >
+                <div class="input-container">
+                    <input id="nomeEditar" data-index="" readonly class="input" type="text" required />
+                    <label  class="label" for="nomeEditar">Nome</label>
+                </div>
+                <div class="input-container">
+                    <input id="placaEditar" class="input" readonly type="text"  required />
+                    <label class="label inputSengundoAdiante" for="placaEditar">Placa do carro</label>
+                </div>
+                <div class="input-container">
+                    <input id="dataEditar" class="input" readonly type="text"  required />
+                    <label class="label inputSengundoAdiante" for="dataEditar">Data</label>
+                </div>
+                <div class="input-container">
+                    <input id="horaEditar" class="input" readonly type="text"  required />
+                    <label class="label inputSengundoAdiante" for="horaEditar">Hora</label>
+                </div>
+                <div class="input-container">
+                    <input id="horaEditar" class="input" readonly type="text"  required />
+                    <label class="label inputSengundoAdiante" for="horaEditar">Valor</label>
+                </div>
+            </form>
+
+            <footer class="modal-footer">
+                <button type="submit" class="btnVerde" id="btnImprimirComprovante">Imprimir</button>
+                <button type="button" class="btnAmarelo" id="cancelarEditarDados">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+    
     <script src="./main.js"></script>
 </body>
 
