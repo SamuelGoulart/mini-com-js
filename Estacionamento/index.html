@@ -18,12 +18,13 @@
             <div>
                 <form class="formCadastro">
                     <label for="nome">Nome</label>
-                    <input maxlength="17" id="nome" data-index="" type="text" placeholder="Ex .: José da silva" required/>
+                    <input maxlength="17" id="nome" data-index="" type="text" placeholder="Ex .: José da silva"
+                        required />
                     <label for="placaDoCarro">Placa do carro</label>
-                    <input id="placaDoCarro" maxlength="10" placeholder="Ex .: CHE-5729" type="text" required/>
+                    <input id="placaDoCarro" maxlength="10" placeholder="Ex .: CHE-5729" type="text" required />
                 </form>
                 <footer>
-                     <button id="btnSalvar" class="btnVerde">Salvar</button>
+                    <button id="btnSalvar" class="btnVerde">Salvar</button>
                     <button type="button" id="btnPreco" class="btnAmarelo">Preços</button>
                 </footer>
             </div>
@@ -47,6 +48,45 @@
             </tbody>
         </table>
     </main>
+
+    <!-- MODAL COMPROVANTE DE ENTRADA -->
+    <div class="modal" id="modalComprovanteEntrada">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h1 id="tituloModal">Imprimir comprovante de entrada</h1>
+                <span class="close-button" id="closeComprovanteEntrada">&#10006;</span>
+            </header>
+
+            <form class="formInputMaterializado">
+                <div class="input-container">
+                    <input id="nomeComprovanteEntrada" data-index="" class="input disabledInput" type="text" />
+                    <label class="label disabledInput margin-top-input" for="nomeComprovanteEntrada"> Nome</label>
+                </div>
+                <div class="input-container">
+                    <input id="placaComprovanteEntrada" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="placaComprovanteEntrada">Placa do
+                        carro</label>
+                </div>
+                <div class="input-container">
+                    <input id="dataComprovanteEntrada" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="dataComprovanteEntrada">Data</label>
+                </div>
+                <div class="input-container">
+                    <input id="horaComprovanteEntrada" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="horaComprovanteEntrada">Hora</label>
+                </div>
+            </form>
+
+            <footer class="modal-footer">
+                <button type="submit" class="btnAmarelo" id="fecharModal">Fechar</button>
+    
+                <button type="submit" class="btnVerde" id="btnImprimirComprovanteEntrada">Imprimir</button>
+                <button type="button" class="btnExcluir" id="cancelarComprovanteEntrada">Apagar registro</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- MODAL PREÇO DO ESTACIONAMENTO -->
     <div class="modal" id="modalPreco">
         <div class="modal-content">
             <header class="modal-header">
@@ -60,7 +100,7 @@
                     placeholder="Informe o preço de até uma hora" required />
                 <label for="precoAteUmaHora"> Após 1 Hora </label>
                 <input class="input-field" type="text" id="precoAteUmaHora"
-                    placeholder="Informe o preço após estacionado mais de 1 hora" required />
+                    placeholder="Demais horas" required />
             </form>
 
             <footer class="modal-footer">
@@ -70,6 +110,7 @@
         </div>
     </div>
 
+    <!-- MODAL EDITAR CADASTRO -->
     <div class="modal" id="modalEditar">
         <div class="modal-content">
             <header class="modal-header">
@@ -103,11 +144,11 @@
         </div>
     </div>
 
-   
+    <!-- MODAL COMPROVANTE, COM PREÇO A SER PAGO -->
     <div class="modal" id="modalComprovante">
         <div class="modal-content">
             <header class="modal-header">
-                <h1 id="tituloModal">Imprimir comprovante</h1>
+                <h1 id="tituloModal">Imprimir comprovante para pagamento</h1>
                 <span class="close-button" id="closeComprovante">&#10006;</span>
             </header>
 

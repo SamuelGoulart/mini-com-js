@@ -84,7 +84,7 @@ thead>tr {
     padding-left: 20px;
 }
 
-#cadastroCliente input:nth-child(4){
+#cadastroCliente input:nth-child(4) {
     width: 200px;
 }
 

@@ -9,6 +9,9 @@ const openModalEditPrice = () => document.querySelector('#modalEditar')
 const openModalProof = () => document.querySelector('#modalComprovante')
     .classList.add('active')
 
+const closeModalVoucherEntry = () => document.querySelector('#modalComprovanteEntrada')
+    .classList.remove('active')
+
 const closeModalPrice = () => document.querySelector('#modalPreco')
     .classList.remove('active')
 
@@ -20,6 +23,15 @@ const closeModalProof = () => document.querySelector('#modalComprovante')
 
 const closeComprovante = () => document.querySelector('#modalComprovante')
     .classList.remove('active')
+
+const cancelVoucherEntry = () => {
+    const db = readDB()
+    db.pop();
+    setDB(db)
+
+    document.querySelector('#modalComprovanteEntrada').classList.remove('active')
+    updateTable()
+}
 
 const readDB = () => JSON.parse(localStorage.getItem('bank')) ?? []
 
@@ -110,6 +122,19 @@ const clearInput = () => {
     document.querySelector('#nome').value = ''
     document.querySelector('#placaDoCarro').value = ''
 }
+
+const proofOfEntry = () => {
+    const db = readDB()
+    const lastRecord = db[db.length - 1]
+
+    document.querySelector('#nomeComprovanteEntrada').value = lastRecord.name
+    document.querySelector('#placaComprovanteEntrada').value = lastRecord.hescores
+    document.querySelector('#dataComprovanteEntrada').value = lastRecord.date
+    document.querySelector('#horaComprovanteEntrada').value = lastRecord.time
+
+    document.querySelector('#modalComprovanteEntrada').classList.add('active')
+}
+
 const isValidForm = () => document.querySelector('.formCadastro').reportValidity()
 
 const saveClient = () => {
@@ -134,29 +159,36 @@ const saveClient = () => {
 
         updateTable()
 
+        proofOfEntry()
+
         clearInput()
 
     }
 }
 
+const isValidFormPrice = () => document.querySelector('.form').reportValidity()
+
 const savePrice = () => {
 
     const dbPrice = readDBPrice()
 
-    const price = {
-        onehourPrice: document.querySelector('#umaHoraPreco').value,
-        otherHoursPrice: document.querySelector('#precoAteUmaHora').value
+    if (isValidFormPrice()) {
+
+        const price = {
+            onehourPrice: document.querySelector('#umaHoraPreco').value,
+            otherHoursPrice: document.querySelector('#precoAteUmaHora').value
+        }
+
+        if (dbPrice == '') {
+
+            insertDBPrice(price)
+        } else {
+            dbPrice[0] = price
+            setDBPrice(dbPrice)
+        }
+
+        closeModalPrice()
     }
-
-    if (dbPrice == '') {
-
-        insertDBPrice(price)
-    } else {
-        dbPrice[0] = price
-        setDBPrice(dbPrice)
-    }
-
-    closeModalPrice()
 }
 
 const applyNumericMask = (number) => {
@@ -256,6 +288,12 @@ document.querySelector('#btnPreco')
 document.querySelector('#salvarPreco')
     .addEventListener('click', savePrice)
 
+document.querySelector('#closeComprovanteEntrada')
+    .addEventListener('click', closeModalVoucherEntry)
+
+document.querySelector('#fecharModal')
+    .addEventListener('click', closeModalVoucherEntry)
+
 document.querySelector('#close')
     .addEventListener('click', closeModalPrice)
 
@@ -267,6 +305,9 @@ document.querySelector('#closeEditar')
 
 document.querySelector('#cancelar')
     .addEventListener('click', closeModalPrice)
+
+document.querySelector('#cancelarComprovanteEntrada')
+    .addEventListener('click', cancelVoucherEntry)
 
 document.querySelector('#cancelarEditarDados')
     .addEventListener('click', closeModalEditData)
@@ -290,6 +331,9 @@ document.querySelector('#precoAteUmaHora')
     .addEventListener('keyup', applyMask)
 
 document.querySelector('#btnImprimirComprovante')
+    .addEventListener('click', () => { window.print() })
+
+document.querySelector('#btnImprimirComprovanteEntrada')
     .addEventListener('click', () => { window.print() })
 
 updateTable()
