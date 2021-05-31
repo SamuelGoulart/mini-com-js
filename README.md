@@ -1,2 +1,2 @@
-# Projetos-com-JavaScript
+# Mini projetos com javaScript
  
