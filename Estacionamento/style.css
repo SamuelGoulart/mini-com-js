@@ -51,6 +51,7 @@ thead>tr {
     background-image: url(./imgs/estacionamento.png);
     background-position: center;
     background-repeat: no-repeat;
+    background-color: #979797;
 }
 
 #painelCadastro>h1 {
