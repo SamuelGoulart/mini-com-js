@@ -26,6 +26,25 @@ main {
     background-color: #979797;
 }
 
+main>h1 {
+    margin: 2rem 0px 0px 4rem;
+}
+
+td {
+    border: 1px solid white;
+    border-radius: 25px 0px 0px 25px;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0px 15px 0px 15px;
+    height: 50px;
+}
+
+thead>tr {
+    font-size: 1.3rem;
+}
+
 #painelCadastro {
     height: 630px;
     margin: -4px;
@@ -50,7 +69,7 @@ main {
     border-radius: 200px 0px 0px 200px;
 }
 
-#cadastroCliente>form {
+#cadastroCliente>div {
     padding: 71px 66px 0px 256px;
 }
 
@@ -61,6 +80,12 @@ main {
     border-radius: 100px;
     border: 2px solid black;
     margin: 10px 0px 10px 0px;
+    outline: none;
+    padding-left: 20px;
+}
+
+#cadastroCliente input:nth-child(4){
+    width: 200px;
 }
 
 /* Modal */
@@ -103,6 +128,8 @@ main {
     padding: 0 20px;
     background-color: inherit;
 }
+
+/* FORMATAÇÃO DA TABELA */
 
 .form {
     display: flex;
@@ -147,8 +174,8 @@ main {
 }
 
 .close-button {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     text-align: center;
     line-height: 40px;
     color: lightslategray;
@@ -159,23 +186,6 @@ main {
     cursor: pointer;
     color: white;
     border-radius: 0 5px 0 0;
-}
-
-main>h1 {
-    margin: 2rem 0px 0px 4rem;
-}
-
-/* FORMATAÇÃO DA TABELA */
-
-td {
-    border: 1px solid white;
-    border-radius: 25px 0px 0px 25px;
-    color: white;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 0px 15px 0px 15px;
-    height: 50px;
 }
 
 #tbody td:nth-child(n+2):nth-child(-n+3) {
@@ -193,18 +203,15 @@ td {
 
 .table {
     width: 1000px;
+    user-select: none;
     margin: 20px auto;
     border-collapse: separate;
     border-spacing: 0px 15px;
 }
 
-thead>tr {
-    font-size: 1.3rem;
-}
+/* Form do Editar e Imprimir Cliente */
 
-/* Form do Editar Cliente */
-
-#form-editar-Cadastro {
+.formInputMaterializado {
     width: 40%;
     margin: auto;
 }
@@ -254,6 +261,14 @@ thead>tr {
     color: #26a69a;
     font-size: .8rem;
     top: -30px;
+}
+
+.margin-top-input {
+    margin-top: 2rem;
+}
+
+.disabledInput {
+    pointer-events: none;
 }
 
 .btnVerde {

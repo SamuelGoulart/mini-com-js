@@ -15,6 +15,11 @@ const closeModalPrice = () => document.querySelector('#modalPreco')
 const closeModalEditData = () => document.querySelector('#modalEditar')
     .classList.remove('active')
 
+const closeModalProof = () => document.querySelector('#modalComprovante')
+    .classList.remove('active')
+
+const closeComprovante = () => document.querySelector('#modalComprovante')
+    .classList.remove('active')
 
 const readDB = () => JSON.parse(localStorage.getItem('bank')) ?? []
 
@@ -25,11 +30,8 @@ const readDBPrice = () => JSON.parse(localStorage.getItem('bankPrice')) ?? []
 const setDBPrice = (bankPrice) => localStorage.setItem('bankPrice', JSON.stringify(bankPrice))
 
 const insertDB = (dadosCadastro) => {
-    // 1 - ler(abrir) o banco de dados
     const bank = readDB()
-    // 2 - adicionar o novo cliente
     bank.push(dadosCadastro)
-    // 3 - enviar(salvar) ou fechar o banco de dados
     setDB(bank)
 }
 
@@ -82,11 +84,8 @@ const clearTable = () => {
 }
 
 const updateTable = () => {
-    // // 0 - limpar tabela
     clearTable()
-    // 1 - ler o banco de dados
     const bank = readDB()
-    // 2 - Criar linhas na tbody com os registros
     bank.forEach(createRegistration)
 }
 
@@ -101,38 +100,49 @@ const date = () => {
 
 const hour = () => {
     let today = new Date();
-    let hours = today.getUTCHours();
-    let minutes = today.getUTCMinutes();
-    let currentTime = (hours - 3) + ":" + minutes
+    let hours = today.getHours();
+    let minutes = today.getMinutes();
+    let currentTime = (hours) + ":" + minutes
     return currentTime
 }
 
 const clearInput = () => {
     document.querySelector('#nome').value = ''
-    document.querySelector('#email').value = ''
-    document.querySelector('#celular').value = ''
-    document.querySelector('#cidade').value = ''
+    document.querySelector('#placaDoCarro').value = ''
 }
+const isValidForm = () => document.querySelector('.formCadastro').reportValidity()
 
 const saveClient = () => {
+    const dbPrice = readDBPrice()
 
-    const newClient = {
-        name: document.querySelector('#nome').value,
-        hescores: document.querySelector('#placaDoCarro').value,
-        date: date(),
-        time: hour()
+    if (isValidForm()) {
+
+        if (dbPrice == '') {
+            confirm("Deve ser informado os preços, antes de inserir um cliente")
+            openModalPrice()
+
+        } else {
+            const newClient = {
+                name: document.querySelector('#nome').value,
+                hescores: document.querySelector('#placaDoCarro').value,
+                date: date(),
+                time: hour()
+            }
+
+            insertDB(newClient)
+        }
+
+        updateTable()
+
+        clearInput()
+
     }
-
-    insertDB(newClient)
-
-    updateTable()
-
-    clearInput()
 }
 
 const savePrice = () => {
 
     const dbPrice = readDBPrice()
+
     const price = {
         onehourPrice: document.querySelector('#umaHoraPreco').value,
         otherHoursPrice: document.querySelector('#precoAteUmaHora').value
@@ -147,7 +157,17 @@ const savePrice = () => {
     }
 
     closeModalPrice()
+}
 
+const applyNumericMask = (number) => {
+    number = number.replace(/\D/g, "")
+    number = number.replace(/(\d{1})(\d{5})$/, "$1.$2")
+    number = number.replace(/(\d{1})(\d{1,2})$/, "$1,$2")
+    return number
+}
+
+const applyMask = (event) => {
+    event.target.value = applyNumericMask(event.target.value)
 }
 
 const deleteClient = (index) => {
@@ -161,7 +181,6 @@ const deleteClient = (index) => {
     }
 }
 
-
 const editClient = (index) => {
 
     const db = readDB()
@@ -174,20 +193,47 @@ const editClient = (index) => {
 
     openModalEditPrice()
 }
+const printOutProof = (index) => {
+
+    const db = readDB()
+    const dbPrice = readDBPrice()
+    document.querySelector('#nomeComprovante').value = db[index].name
+    document.querySelector('#placaComprovante').value = db[index].hescores
+    document.querySelector('#dataComprovante').value = db[index].date
+    const time = document.querySelector('#horaComprovante').value = db[index].time
+    document.querySelector('#nomeComprovante').dataset.index = index
+
+    //Trasformar há hora e minutos da chegada em segundos
+    const hoursArrivel = parseInt(time.substr(0, 2)) * 3600
+    const minutesArrivel = parseInt(time.substr(3, 4)) * 60
+
+    //Trasformar a hora e minutos de saída em segundos
+    const departureHours = parseInt(hour().substr(0, 2)) * 3600
+    const outgoingMinutes = parseInt(hour().substr(3, 4)) * 60
+
+    // Segundos de saída menos segundos de entrada
+    const secondsOfArriveMinusSecondOfExit = ((departureHours + outgoingMinutes) - (hoursArrivel + minutesArrivel))
+
+    // Quantidade de horas que fica estacionado
+    const numberOfHoursThatAreParked = secondsOfArriveMinusSecondOfExit / 3600
+
+    if (numberOfHoursThatAreParked <= 1) {
+        document.querySelector('#valorPagar').value = 'R$ ' + dbPrice[0].onehourPrice
+    } else {
+        const onehourPrice = dbPrice[0].onehourPrice.replace(",", ".")
+        const otherHoursPrice = dbPrice[0].otherHoursPrice.replace(",", ".")
+        document.querySelector('#valorPagar').value = 'R$ ' + (otherHoursPrice * Math.trunc(numberOfHoursThatAreParked) + parseFloat(onehourPrice))
+    }
+
+    openModalProof()
+}
 
 const showModalPrice = () => {
 
     const dbPrice = readDBPrice()
-    console.log(dbPrice)
 
     document.querySelector('#umaHoraPreco').value = dbPrice[0].onehourPrice
     document.querySelector('#precoAteUmaHora').value = dbPrice[0].otherHoursPrice
-
-}
-
-const proof = () =>{
-    openModalProof()
-
 }
 
 const actionButttons = (event) => {
@@ -196,10 +242,10 @@ const actionButttons = (event) => {
         const action = element.dataset.action.split('-')
         if (action[0] === 'deletar') {
             deleteClient(action[1])
-        } else if (action[0]== 'editar') {
+        } else if (action[0] == 'editar') {
             editClient(action[1])
-        }else{
-            proof(action[1])
+        } else {
+            printOutProof(action[1])
         }
     }
 }
@@ -211,16 +257,22 @@ document.querySelector('#salvarPreco')
     .addEventListener('click', savePrice)
 
 document.querySelector('#close')
-    .addEventListener('click', () => { closeModalPrice(); clearInput() })
+    .addEventListener('click', closeModalPrice)
+
+document.querySelector('#closeComprovante')
+    .addEventListener('click', closeComprovante)
 
 document.querySelector('#closeEditar')
-    .addEventListener('click', () => { closeModalEditData(); clearInput() })
+    .addEventListener('click', closeModalEditData)
 
 document.querySelector('#cancelar')
-    .addEventListener('click', () => { closeModalPrice(); clearInput() })
+    .addEventListener('click', closeModalPrice)
 
 document.querySelector('#cancelarEditarDados')
-    .addEventListener('click', () => { closeModalEditData(); clearInput() })
+    .addEventListener('click', closeModalEditData)
+
+document.querySelector('#cancelarComprovamte')
+    .addEventListener('click', closeModalProof)
 
 document.querySelector('#btnSalvar')
     .addEventListener('click', saveClient)
@@ -231,6 +283,14 @@ document.querySelector('#btnAtualizarCliente')
 document.querySelector('#tabelaClientes')
     .addEventListener('click', actionButttons)
 
+document.querySelector('#umaHoraPreco')
+    .addEventListener('keyup', applyMask)
+
+document.querySelector('#precoAteUmaHora')
+    .addEventListener('keyup', applyMask)
+
+document.querySelector('#btnImprimirComprovante')
+    .addEventListener('click', () => { window.print() })
 
 updateTable()
 

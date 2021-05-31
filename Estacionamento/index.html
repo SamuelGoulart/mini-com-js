@@ -15,14 +15,18 @@
     <section id="painelCadastro">
         <h1>Sistema FastParking</h1>
         <section id="cadastroCliente">
-            <form>
-                <label for="">Nome</label>
-                <input maxlength="17" id="nome" data-index="" type="text" placeholder="    Ex .: José da silva">
-                <label for="">Placa do carro</label>
-                <input  id="placaDoCarro" required placeholder="     Ex .: CHE - 5729" type="text">
-                <button id="btnSalvar" required class="btnVerde">Salvar</button>
-                <button type="button" id="btnPreco" class="btnAmarelo" >Preços</button>
-            </form>
+            <div>
+                <form class="formCadastro">
+                    <label for="nome">Nome</label>
+                    <input maxlength="17" id="nome" data-index="" type="text" placeholder="Ex .: José da silva" required/>
+                    <label for="placaDoCarro">Placa do carro</label>
+                    <input id="placaDoCarro" maxlength="10" placeholder="Ex .: CHE-5729" type="text" required/>
+                </form>
+                <footer>
+                     <button id="btnSalvar" class="btnVerde">Salvar</button>
+                    <button type="button" id="btnPreco" class="btnAmarelo">Preços</button>
+                </footer>
+            </div>
         </section>
     </section>
     <main>
@@ -43,8 +47,8 @@
             </tbody>
         </table>
     </main>
-    <div class="modal" id="modalPreco" >
-        <div class="modal-content" >
+    <div class="modal" id="modalPreco">
+        <div class="modal-content">
             <header class="modal-header">
                 <h1 id="tituloModal">Preços</h1>
                 <span class="close-button" id="close">&#10006;</span>
@@ -52,9 +56,11 @@
 
             <form class="form">
                 <label for="umaHoraPreco">Até 1 hora estacionado</label>
-                <input class="input-field" data-index="" type="text" id="umaHoraPreco" placeholder="Informe o preço de até uma hora" required />
-                <label for="precoAteUmaHora" > Após 1 Hora </label>
-                <input class="input-field" type="text" id="precoAteUmaHora" placeholder="Informe o preço de até uma hora" required />
+                <input class="input-field" data-index="" type="text" id="umaHoraPreco"
+                    placeholder="Informe o preço de até uma hora" required />
+                <label for="precoAteUmaHora"> Após 1 Hora </label>
+                <input class="input-field" type="text" id="precoAteUmaHora"
+                    placeholder="Informe o preço após estacionado mais de 1 hora" required />
             </form>
 
             <footer class="modal-footer">
@@ -64,28 +70,28 @@
         </div>
     </div>
 
-    <div class="modal" id="modalEditar" >
-        <div class="modal-content" >
+    <div class="modal" id="modalEditar">
+        <div class="modal-content">
             <header class="modal-header">
                 <h1 id="tituloModal">Editar Dados</h1>
                 <span class="close-button" id="closeEditar">&#10006;</span>
             </header>
 
-            <form id="form-editar-Cadastro"  >
+            <form class="formInputMaterializado">
                 <div class="input-container">
                     <input id="nomeEditar" data-index="" class="input" type="text" required />
-                    <label style="margin-top: 2rem;" class="label" for="nomeEditar">Nome</label>
+                    <label class="label margin-top-input" for="nomeEditar">Nome</label>
                 </div>
                 <div class="input-container">
-                    <input id="placaEditar" class="input" type="text"  required />
+                    <input id="placaEditar" class="input" type="text" required />
                     <label class="label inputSengundoAdiante" for="placaEditar">Placa do carro</label>
                 </div>
                 <div class="input-container">
-                    <input id="dataEditar" class="input" type="text"  required />
+                    <input id="dataEditar" class="input" type="text" required />
                     <label class="label inputSengundoAdiante" for="dataEditar">Data</label>
                 </div>
                 <div class="input-container">
-                    <input id="horaEditar" class="input" type="text"  required />
+                    <input id="horaEditar" class="input" type="text" required />
                     <label class="label inputSengundoAdiante" for="horaEditar">Hora</label>
                 </div>
             </form>
@@ -96,44 +102,45 @@
             </footer>
         </div>
     </div>
-    
-    <div class="modal" id="modalComprovante" >
-        <div class="modal-content" >
+
+    <div class="modal" id="modalComprovante">
+        <div class="modal-content">
             <header class="modal-header">
-                <h1 id="tituloModal">Imprimir</h1>
-                <span class="close-button" id="closeEditar">&#10006;</span>
+                <h1 id="tituloModal">Imprimir comprovante</h1>
+                <span class="close-button" id="closeComprovante">&#10006;</span>
             </header>
 
-            <form id="form-editar-Cadastro"  >
+            <form class="formInputMaterializado">
                 <div class="input-container">
-                    <input id="nomeEditar" data-index="" readonly class="input" type="text" required />
-                    <label  class="label" for="nomeEditar">Nome</label>
+                    <input id="nomeComprovante" data-index="" class="input disabledInput" type="text" />
+                    <label class="label disabledInput margin-top-input" for="nomeComprovante"> Nome</label>
                 </div>
                 <div class="input-container">
-                    <input id="placaEditar" class="input" readonly type="text"  required />
-                    <label class="label inputSengundoAdiante" for="placaEditar">Placa do carro</label>
+                    <input id="placaComprovante" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="placaComprovante">Placa do
+                        carro</label>
                 </div>
                 <div class="input-container">
-                    <input id="dataEditar" class="input" readonly type="text"  required />
-                    <label class="label inputSengundoAdiante" for="dataEditar">Data</label>
+                    <input id="dataComprovante" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="dataComprovante">Data</label>
                 </div>
                 <div class="input-container">
-                    <input id="horaEditar" class="input" readonly type="text"  required />
-                    <label class="label inputSengundoAdiante" for="horaEditar">Hora</label>
+                    <input id="horaComprovante" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="horaComprovante">Hora</label>
                 </div>
                 <div class="input-container">
-                    <input id="horaEditar" class="input" readonly type="text"  required />
-                    <label class="label inputSengundoAdiante" for="horaEditar">Valor</label>
+                    <input id="valorPagar" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="valorPagar">Valor</label>
                 </div>
             </form>
 
             <footer class="modal-footer">
                 <button type="submit" class="btnVerde" id="btnImprimirComprovante">Imprimir</button>
-                <button type="button" class="btnAmarelo" id="cancelarEditarDados">Cancelar</button>
+                <button type="button" class="btnAmarelo" id="cancelarComprovamte">Cancelar</button>
             </footer>
         </div>
     </div>
-    
+
     <script src="./main.js"></script>
 </body>
 
