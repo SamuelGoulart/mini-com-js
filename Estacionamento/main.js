@@ -103,16 +103,9 @@ const clearTable = () => {
 }
 
 const updateTable = () => {
-    clearTable()
     const bank = readDB()
-    const retornaStatus = (value) => {
-        if (value.status == "Nao-Pago") 
-        return value
-    }
-
-    const valueStatus = bank.filter(retornaStatus)
-    valueStatus.forEach(status => { })
-    valueStatus.forEach(createRegistration)
+    clearTable()
+    bank.forEach(createRegistration)
 }
 
 const date = () => {
@@ -135,6 +128,14 @@ const hour = () => {
 const clearInput = () => {
     document.querySelector('#nome').value = ''
     document.querySelector('#placaDoCarro').value = ''
+}
+
+const disableButton = () => {
+    document.querySelector('#cancelarComprovanteEntrada').classList.add('displayNome')
+}
+
+const enableButton = () =>{
+    document.querySelector('#cancelarComprovanteEntrada').classList.remove('displayNome')
 }
 
 const printProofOfEntry = () => {
@@ -173,9 +174,7 @@ const saveClient = () => {
                 hescores: document.querySelector('#placaDoCarro').value,
                 date: date(),
                 time: hour(),
-                dateExit: null,
-                timeExit: null,
-                status: 'Nao-Pago'
+                status: "Não pago"                 
             }
 
             insertDB(newClient)
@@ -254,7 +253,6 @@ const editClient = (index) => {
 }
 
 const printOutProof = () => {
-
     modalVouchers()
 
     const index = document.querySelector('#btnPagamento').dataset.index
@@ -319,29 +317,16 @@ const actionButttons = (event) => {
 }
 
 const changeStatus = () => {
-
-    confirm("Confirma que o cliente, já realizou o pagamento?")
-
-    const updateStatus = {
-        name: document.querySelector('#nomeComprovante').value,
-        hescores: document.querySelector('#placaComprovante').value,
-        date: document.querySelector('#dataComprovante').value,
-        time: document.querySelector('#horaComprovante').value,
-        dateExit: date(),
-        timeExit: hour(),
-        status: "pago"
-    }
-
-    const index = document.querySelector('#btnComprovanteIndex').dataset.index
-    const somaMaisUM = 1 + parseInt(index)
-    console.log(somaMaisUM)
-
+    const resp = confirm("Confirma que o cliente, já realizou o pagamento?")
+    const index = document.querySelector('#btnPagamento').dataset.index  
     const db = readDB()
-    db[index] = updateStatus
-    setDB(db)
 
-    updateTable()
-    document.querySelector('#btnComprovanteIndex').dataset.index = somaMaisUM
+    if (resp) {
+        db.splice(index, 1)
+        setDB(db)
+        updateTable()
+        closeModalProof()
+    }
 }
 
 document.querySelector('#salvarPreco')
@@ -390,13 +375,13 @@ document.querySelector('#btnPreco')
     .addEventListener('click', () => { openModalPrice(); showModalPrice() })
 
 document.querySelector('#btnSalvar')
-    .addEventListener('click', saveClient)
+    .addEventListener('click', () => {saveClient(); enableButton()})
 
 document.querySelector('#btnAtualizarCliente')
     .addEventListener('click', updateClient)
 
 document.querySelector('#btnComprovanteEntrada')
-    .addEventListener('click', printProofOfEntry)
+    .addEventListener('click', () => { printProofOfEntry(); disableButton() })
 
 document.querySelector('#btnPagamento')
     .addEventListener('click', printOutProof)
