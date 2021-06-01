@@ -15,6 +15,7 @@
     <section id="painelCadastro">
         <h1>Sistema FastParking</h1>
         <section id="cadastroCliente">
+            <h1>Cadastro de cliente</h1>
             <div>
                 <form class="formCadastro">
                     <label for="nome">Nome</label>
@@ -30,24 +31,7 @@
             </div>
         </section>
     </section>
-    <main>
-        <h1>Controle de Estacionamento</h1>
-        <table class="table" id="tabelaClientes">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Placa</th>
-                    <th>Data</th>
-                    <th>Hora</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody id="tbody">
 
-
-            </tbody>
-        </table>
-    </main>
 
     <!-- MODAL COMPROVANTE DE ENTRADA -->
     <div class="modal" id="modalComprovanteEntrada">
@@ -59,7 +43,7 @@
 
             <form class="formInputMaterializado">
                 <div class="input-container">
-                    <input id="nomeComprovanteEntrada" data-index="" class="input disabledInput" type="text" />
+                    <input id="nomeComprovanteEntrada" class="input disabledInput" type="text" />
                     <label class="label disabledInput margin-top-input" for="nomeComprovanteEntrada"> Nome</label>
                 </div>
                 <div class="input-container">
@@ -79,13 +63,31 @@
 
             <footer class="modal-footer">
                 <button type="submit" class="btnAmarelo" id="fecharModal">Fechar</button>
-    
+
                 <button type="submit" class="btnVerde" id="btnImprimirComprovanteEntrada">Imprimir</button>
                 <button type="button" class="btnExcluir" id="cancelarComprovanteEntrada">Apagar registro</button>
             </footer>
         </div>
     </div>
 
+    <main>
+        <h1>Controle de Estacionamento</h1>
+        <table class="table" id="tabelaClientes">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Placa</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+
+            </tbody>
+        </table>
+    </main>
     <!-- MODAL PREÇO DO ESTACIONAMENTO -->
     <div class="modal" id="modalPreco">
         <div class="modal-content">
@@ -99,8 +101,7 @@
                 <input class="input-field" data-index="" type="text" id="umaHoraPreco"
                     placeholder="Informe o preço de até uma hora" required />
                 <label for="precoAteUmaHora"> Após 1 Hora </label>
-                <input class="input-field" type="text" id="precoAteUmaHora"
-                    placeholder="Demais horas" required />
+                <input class="input-field" type="text" id="precoAteUmaHora" placeholder="Demais horas" required />
             </form>
 
             <footer class="modal-footer">
@@ -128,12 +129,12 @@
                     <label class="label inputSengundoAdiante" for="placaEditar">Placa do carro</label>
                 </div>
                 <div class="input-container">
-                    <input id="dataEditar" class="input" type="text" required />
-                    <label class="label inputSengundoAdiante" for="dataEditar">Data</label>
+                    <input id="dataEditar" class="input disabledInput" type="text" required />
+                    <label class="label inputSengundoAdiante disabledInput" for="dataEditar">Data</label>
                 </div>
                 <div class="input-container">
-                    <input id="horaEditar" class="input" type="text" required />
-                    <label class="label inputSengundoAdiante" for="horaEditar">Hora</label>
+                    <input id="horaEditar" class="input disabledInput" type="text" required />
+                    <label class="label inputSengundoAdiante disabledInput" for="horaEditar">Hora</label>
                 </div>
             </form>
 
@@ -144,6 +145,23 @@
         </div>
     </div>
 
+    <!-- MODAL ECOLHA COMPROVANTE -->
+    <div class="modal" id="modalEscolhaDeComprovante">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h1 id="tituloModal">Comprovante de pagamento ou de entrada </h1>
+                <span class="close-button" id="closeEscolhaComprovante">&#10006;</span>
+            </header>
+            <button type="submit" data-index="" class="btnVerde" id="btnPagamento">COMPROVANTE PARA PAGAMENTO</button>
+            <button type="button" class="btnAmarelo" id="btnComprovanteEntrada">COMPROVANTE DE ENTRADA DO
+                VEÍCULO</button>
+
+            <!-- <footer class="modal-footer">
+                <button type="button" class="btnAmarelo" id="cancelarEditarDados">Cancelar</button>
+            </footer> -->
+
+        </div>
+    </div>
     <!-- MODAL COMPROVANTE, COM PREÇO A SER PAGO -->
     <div class="modal" id="modalComprovante">
         <div class="modal-content">
@@ -164,25 +182,58 @@
                 </div>
                 <div class="input-container">
                     <input id="dataComprovante" class="input disabledInput" type="text" />
-                    <label class="label inputSengundoAdiante disabledInput" for="dataComprovante">Data</label>
+                    <label class="label inputSengundoAdiante disabledInput" for="dataComprovante">Data de
+                        entrada</label>
+                </div>
+                <div class="input-container">
+                    <input id="dataComprovanteSaida" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="dataComprovanteSaida">Data de
+                        saída</label>
                 </div>
                 <div class="input-container">
                     <input id="horaComprovante" class="input disabledInput" type="text" />
-                    <label class="label inputSengundoAdiante disabledInput" for="horaComprovante">Hora</label>
+                    <label class="label inputSengundoAdiante disabledInput" for="horaComprovante">Hora de
+                        entrada</label>
+                </div>
+
+                <div class="input-container">
+                    <input id="horaComprovanteSaida" class="input disabledInput" type="text" />
+                    <label class="label inputSengundoAdiante disabledInput" for="horaComprovanteSaida">Hora de
+                        saída</label>
                 </div>
                 <div class="input-container">
                     <input id="valorPagar" class="input disabledInput" type="text" />
-                    <label class="label inputSengundoAdiante disabledInput" for="valorPagar">Valor</label>
+                    <label class="label inputSengundoAdiante disabledInput" for="valorPagar">Valor a ser pago</label>
                 </div>
             </form>
 
             <footer class="modal-footer">
+                <button type="submit" class="btnVerde" id="btnPago">Pago</button>
                 <button type="submit" class="btnVerde" id="btnImprimirComprovante">Imprimir</button>
                 <button type="button" class="btnAmarelo" id="cancelarComprovamte">Cancelar</button>
             </footer>
         </div>
     </div>
 
+    <section class="backgroundForm">
+        <h1>Veículos que já realizaram o pagamento</h1>
+        <h3 style="margin-left: 60px;" >Esses veículos não se encontram mais no estacionamento</h3>
+        <table class="table" id="tabelaClientes">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Placa</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+
+            </tbody>
+        </table>
+    </section>
     <script src="./main.js"></script>
 </body>
 

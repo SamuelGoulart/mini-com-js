@@ -6,6 +6,10 @@
     font-family: Calibri, sans-serif;
 }
 
+body {
+    background-color: #c8c8c8;
+}
+
 button {
     width: 140px;
     height: 70px;
@@ -18,22 +22,24 @@ button {
     font-weight: bolder;
 }
 
-main {
+main,
+.backgroundForm {
     max-width: 1100px;
-    color: white;
+    color: black;
     margin: 30px auto;
     border-radius: 25px 25px 0px 0px;
-    background-color: #979797;
+    background-color: white;
 }
 
-main>h1 {
+main>h1,
+.backgroundForm > h1 {
     margin: 2rem 0px 0px 4rem;
 }
 
 td {
-    border: 1px solid white;
+    border: 1px solid black;
     border-radius: 25px 0px 0px 25px;
-    color: white;
+    color: black;
     text-align: center;
     font-size: 1.2rem;
     font-weight: bold;
@@ -47,36 +53,44 @@ thead>tr {
 
 #painelCadastro {
     height: 630px;
-    margin: -4px;
-    background-image: url(./imgs/estacionamento.png);
-    background-position: center;
+    background-image: url("./imgs/estacionamento.png");
     background-repeat: no-repeat;
-    background-color: #979797;
+    background-position-x: center;
 }
 
 #painelCadastro>h1 {
-    font-size: 2rem;
-    padding: 30px 0px 61px 0px;
     color: white;
+    font-size: 2.5rem;
+    font-style: italic;
+    padding: 30px 0px 102px 0px;
     text-align: center;
 }
 
 #cadastroCliente {
-    width: 882px;
+    width: 95vw;
+    max-width: 1100px;
     height: 374px;
     position: relative;
+    color: black;
     background-color: white;
     margin: auto;
-    border-radius: 200px 0px 0px 200px;
+    border-radius: 220px 0px 0px 0px;
+}
+
+#cadastroCliente>h1 {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 1.7rem;
 }
 
 #cadastroCliente>div {
-    padding: 71px 66px 0px 256px;
+    padding: 40px 66px 0px 315px;
 }
 
 #cadastroCliente input {
     display: block;
-    width: 500px;
+    width: 90vw;
+    max-width: 500px;
     height: 30px;
     border-radius: 100px;
     border: 2px solid black;
@@ -110,9 +124,6 @@ thead>tr {
 }
 
 .modal-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
     width: 50vw;
     margin: 15vh auto;
     background-color: white;
@@ -210,15 +221,16 @@ thead>tr {
     border-spacing: 0px 15px;
 }
 
-/* Form do Editar e Imprimir Cliente */
-
 .formInputMaterializado {
-    width: 40%;
-    margin: auto;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px auto;
 }
 
 .input-container {
     position: relative;
+    margin-left: 50px;
 }
 
 .input {
@@ -247,6 +259,13 @@ thead>tr {
 .inputSengundoAdiante {
     pointer-events: none;
     margin-top: 40px
+}
+
+#modalEscolhaDeComprovante > 
+.modal-content button{
+    width: 40vw;
+    margin-left: 50px;
+    font-size: 1.5rem;
 }
 
 .input, .label {
@@ -283,18 +302,31 @@ thead>tr {
 }
 
 .btnAmarelo {
-    background: rgba(255, 255, 0, 0.5);
+    background-color: #26a69a;
+    border: 0px;
 }
 
 .btnAmarelo:hover {
     background-color: white;
     color: black;
     cursor: pointer;
-    border: rgba(255, 255, 0, 0.5) 3px solid;
+    border: #26a69a 3px solid;
 }
 
 .btnExcluir {
     background: rgba(255, 0, 0, 0.6);
+}
+
+@media (max-width: 900px) {
+    #cadastroCliente {
+        border-radius: 25px 25px 0px 0px;
+    }
+    #cadastroCliente>div {
+        padding: 60px 0px 0px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
