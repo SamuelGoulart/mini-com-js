@@ -22,7 +22,7 @@
                     <input maxlength="17" id="nome" data-index="" type="text" placeholder="Ex .: José da silva"
                         required />
                     <label for="placaDoCarro">Placa do carro</label>
-                    <input id="placaDoCarro" maxlength="10" placeholder="Ex .: CHE-5729" type="text" required />
+                    <input id="placaDoCarro" pattern="\D{3}-?\d{4}" maxlength="8" placeholder="Ex .: CHE-5729" type="text" required />
                 </form>
                 <footer>
                     <button id="btnSalvar" class="btnVerde">Salvar</button>

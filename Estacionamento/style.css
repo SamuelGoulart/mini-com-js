@@ -102,6 +102,9 @@ thead>tr {
     width: 200px;
 }
 
+#placaDoCarro{
+    text-transform: uppercase;
+}
 /* Modal */
 
 .modal {
@@ -170,7 +173,7 @@ thead>tr {
 }
 
 .input-field {
-    width: calc(75% - 10px);
+    width: calc(70% - 10px);
     height: 40px;
     padding: 0 14px;
     font-size: 16px;

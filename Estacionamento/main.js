@@ -224,8 +224,18 @@ const applyNumericMask = (number) => {
     return number
 }
 
+const applyCarMask = (number) => {
+    number = number.replace(/[^a-zA-Z0-9]/g, "")
+    number = number.replace(/(.{3})(.)/, "$1-$2");
+    return number
+}
+
 const applyMask = (event) => {
     event.target.value = applyNumericMask(event.target.value)
+}
+
+const applyMaskCar = (event) => {
+    event.target.value = applyCarMask(event.target.value)
 }
 
 const deleteClient = (index) => {
@@ -329,6 +339,7 @@ const changeStatus = () => {
     }
 }
 
+
 document.querySelector('#salvarPreco')
     .addEventListener('click', savePrice)
 
@@ -370,6 +381,9 @@ document.querySelector('#umaHoraPreco')
 
 document.querySelector('#precoAteUmaHora')
     .addEventListener('keyup', applyMask)
+
+document.querySelector('#placaDoCarro')
+    .addEventListener('keyup', applyMaskCar)
 
 document.querySelector('#btnPreco')
     .addEventListener('click', () => { openModalPrice(); showModalPrice() })
