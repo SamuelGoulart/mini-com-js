@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
     font-family: Calibri, sans-serif;
 }
 
@@ -102,9 +101,10 @@ thead>tr {
     width: 200px;
 }
 
-#placaDoCarro{
+#placaDoCarro {
     text-transform: uppercase;
 }
+
 /* Modal */
 
 .modal {
@@ -335,15 +335,63 @@ thead>tr {
 }
 
 @media (max-width: 480px) {
+    body {
+        font-size: 62.5%;
+    }
+    button {
+        width: 96px;
+        margin: 0px;
+    }
+    th {
+        margin-top: 20px;
+    }
+    td{
+        width: 215px;
+        border-radius: 25px 25px 0px 0px;
+        margin: auto;
+    }
+    #tbody td:nth-child(n+2):nth-child(-n+3) {
+        border-radius: 0px;
+    }
+    #tbody td:nth-child(4) {
+        border-radius: 0px 0px 25px 25px;
+    }
+    #tbody td:nth-child(5) {
+        width: 91vw;
+        
+        margin: 10px 0px 30px -10px;
+    }
+    #tabelaClientes th:nth-child(5) {
+       margin-top: 48px;
+    }
     .input-field {
         width: 100%;
+    }
+    .table {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+    .table thead, .table tbody, .table th, .table td, .table tr {
+        display: block;
+    }
+    .table thead {
+        float: left;
+    }
+    .table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .table tbody tr {
+        display: inline-block;
     }
 }
 
 @media (max-width:480px) {
     .modal-content {
         width: 100%;
-        height: 100%;
+        height: auto;
     }
 }
 

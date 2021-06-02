@@ -224,10 +224,10 @@ const applyNumericMask = (number) => {
     return number
 }
 
-const applyCarMask = (number) => {
-    number = number.replace(/[^a-zA-Z0-9]/g, "")
-    number = number.replace(/(.{3})(.)/, "$1-$2");
-    return number
+const applyCarMask = (carPlate) => {
+    carPlate = carPlate.replace(/[^a-zA-Z0-9]/, "")
+    carPlate = carPlate.replace(/(.{3})(.)/, "$1-$2");
+    return carPlate
 }
 
 const applyMask = (event) => {
