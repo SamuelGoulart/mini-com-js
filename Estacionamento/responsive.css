@@ -1,55 +1,95 @@
-
+/* RESPONSIVIDADE DOS BOTÃOES */
 @media (max-width: 480px) {
     button {
-        width: 120px;
+        width: 130px;
         height: 60px;
         margin: 10px 0px 0px 0px;
         text-transform: uppercase;
         font-size: 80%;
     }
+    #btnPagamento, #btnComprovanteEntrada {
+        width: 90vw !important;
+        font-size: 0.9rem !important;
+    }
+    #btnComprovanteEntrada {
+        margin-bottom: 70px;
+    }
+    #btnPagamento {
+        margin-top: 70px;
+    }
+    #modalEscolhaDeComprovante>.modal-content button {
+        margin-left: 20px;
+    }
+}
+
+/* RESPONSIVIDADE DOS MODAIS */
+
+@media (max-width:480px) {
+    .modal-content {
+        width: 100%;
+        height: auto;
+    }
+    .modal-header>h1 {
+        font-size: 1rem;
+    }
+    .input-field {
+        width: 100%;
+    }
+    .formInputMaterializado {
+        display: unset;
+    }
+    .input-container {
+        margin: 10px 20vw 30px 20vw;
+    }
+}
+
+/* RESPONSIVIDADE TABELA COM OS CADASTROS */
+
+@media (max-width:480px) {
     th {
         display: none;
     }
-    tr{
-        margin: 25px 0px 0px 25px;
+    tr {
+        margin-left: 25px;
     }
-    td{
+    td {
         width: 150px;
         border-radius: 25px 25px 0px 0px;
+        padding-top: 15px;
+        font-size: 0.9rem;
     }
-    #painelCadastro h1,
-    main h1{
-           font-size: 1.6rem;
+    #painelCadastro h1, main h1 {
+        font-size: 1.6rem;
     }
-    main h1{
+    main h1 {
         margin: 0rem 0px 0px 1.9rem;
     }
     #tbody td:nth-child(n+2):nth-child(-n+3) {
         border-radius: 0px;
-
     }
     #tbody td:nth-child(4) {
         border-radius: 0px 0px 25px 25px;
+        margin-bottom: 3rem;
     }
     #tbody td:nth-child(5) {
-        width:  50vw;
+        width: 50vw;
         float: right;
-        margin-top: -198px;
-        margin-bottom: 10px;
+        margin-top: -272px;
+        margin-bottom: 20px;
+        font-size: 1.2rem;
     }
-    
-    #tbody{
+    #tbody {
         width: 100vw;
-    }
-    .input-field {
-        width: 100%;
     }
     .table {
         display: block;
         position: relative;
         width: 100%;
     }
-    .table thead, .table tbody, .table td, .table tr {
+    .table thead, 
+    .table tbody, 
+    .table td, 
+    .table tr {
         display: block;
     }
     .table thead {
@@ -65,12 +105,6 @@
     }
 }
 
-@media (max-width:480px) {
-    .modal-content {
-        width: 100%;
-        height: auto;
-    }
-}
 @media (max-width: 900px) {
     #cadastroCliente {
         border-radius: 25px 25px 0px 0px;
