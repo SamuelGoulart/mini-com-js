@@ -1,0 +1,96 @@
+
+@media (max-width: 480px) {
+    button {
+        width: 120px;
+        height: 60px;
+        margin: 10px 0px 0px 0px;
+        text-transform: uppercase;
+        font-size: 80%;
+    }
+    th {
+        display: none;
+    }
+    tr{
+        margin: 25px 0px 0px 25px;
+    }
+    td{
+        width: 150px;
+        border-radius: 25px 25px 0px 0px;
+    }
+    #painelCadastro h1,
+    main h1{
+           font-size: 1.6rem;
+    }
+    main h1{
+        margin: 0rem 0px 0px 1.9rem;
+    }
+    #tbody td:nth-child(n+2):nth-child(-n+3) {
+        border-radius: 0px;
+
+    }
+    #tbody td:nth-child(4) {
+        border-radius: 0px 0px 25px 25px;
+    }
+    #tbody td:nth-child(5) {
+        width:  50vw;
+        float: right;
+        margin-top: -198px;
+        margin-bottom: 10px;
+    }
+    
+    #tbody{
+        width: 100vw;
+    }
+    .input-field {
+        width: 100%;
+    }
+    .table {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+    .table thead, .table tbody, .table td, .table tr {
+        display: block;
+    }
+    .table thead {
+        float: left;
+    }
+    .table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .table tbody {
+        display: inline-block;
+    }
+}
+
+@media (max-width:480px) {
+    .modal-content {
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-width: 900px) {
+    #cadastroCliente {
+        border-radius: 25px 25px 0px 0px;
+    }
+    #cadastroCliente>div {
+        padding: 60px 0px 0px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1500px) {
+    #painelCadastro {
+        background-image: url("./imgs/estacionamento1920x1080.jpg");
+    }
+}
+
+@media (min-width: 1800px) {
+    #painelCadastro {
+        background-image: url("./imgs/estacionamento2168X1440.jpg");
+    }
+}
