@@ -1,4 +1,4 @@
-.btn{
+.button{
     border-style: none;
     padding: 0 20px;
     min-height: 40px;
@@ -8,18 +8,27 @@
     border-radius: 5px;
 }
 
-.btn.red {
+.button.red {
     background-color: #ff4949;
 }
 
-.btn.blue {
+.button.blue {
     background-color: #1fb6ff
 }
 
-.btn.green {
+.button.green {
     background-color: #13CE66
 }
 
-.btn.dark {
+.button.dark {
     background-color: #343a40
+}
+.button.orange {
+    background-color: orange;
+}
+
+@media (max-width:480px){
+    .button{
+       margin: auto;
+    }
 }

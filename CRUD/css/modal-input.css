@@ -12,3 +12,9 @@
 .input-field:focus {
     border: 2px solid #1fb6ff;
 }
+
+@media (max-width: 480px) {
+    .input-field{
+        width: 100%;
+    }
+}

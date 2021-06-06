@@ -1,203 +1,166 @@
 'use strict'
 
-//push adiciona 
-// forEach ler os valores do array
-// splice apaga um dado do banco de dados
-// nome_do_banco.splice(1,1)
-// banco.push({
-//     nome: 'Samuel',
-//     email: 'ana@gmail.com',
-//     celular: '12355544',
-//     cidade: 'Jandira'
-// })
+const openModal = () => document.querySelector('#modal')
+    .classList.add('active')
 
-// $ para um único elemento
-const $ = (element) => document.querySelector(element)
-// $ para vários elemento
-const $$ = (element) => document.querySelectorAll(element)
+const closeModal = () => document.querySelector('#modal')
+    .classList.remove('active')
 
-const divMensagem = $('#mensagem')
+const readDB = () => JSON.parse(localStorage.getItem('db')) ?? []
 
+const setDB = (db) => localStorage.setItem('db', JSON.stringify(db))
 
-const openModal = () => $('#modal').classList.add('active')
-const closeModal = () => {
-    $('#displayNome').classList.add('displayNome')
-    $('.editarCliente').classList.add('displayNome')
-
-    $('#novoCliente').classList.remove('displayNome')
-    $('#modal').classList.remove('active')
-    $('#salvar').classList.remove('displayNome')
+const insertDB = (client) => {
+    // 1 - ler(abrir) o banco de dados
+    const db = readDB()
+    // 2 - adicionar o novo cliente
+    db.push(client)
+    // 3 - enviar(salvar) ou fechar o banco de dados
+    setDB(db)
 }
 
-const clearInput = () => {
-    // Array.from trasforma é um array, possibilidando o uso do map
-    // Sem o Array.from ele é um  Node List
-    const inputs = Array.from($$('.modal input'))
-    // O forEach vai varrer o array, é pegar todos os inputs e colocar o valor como '', nada
-    inputs.forEach(input => input.value = '')
-}
-
-const readDb = () => JSON.parse(localStorage.getItem('banco')) ?? [];
-
-const validateInputs = () => {
-
-    const inputs = Array.from($$('.modal input'))
-
-    if (inputs[0].value == "") {
-        inputs[0].focus()
-    } else if (inputs[1].value == "") {
-        inputs[1].focus()
-    } else if (inputs[2].value == "") {
-        inputs[2].focus()
-    } else if (inputs[3].value == "") {
-        inputs[3].focus()
-    } else {
-        saveClient()
-    }
-
-}
-
-const createRow = (client, index) => {
-    const tabelaClientes = $('#tabelaClientes tbody')
-    const newTr = document.createElement('tr')
-    newTr.innerHTML = `
-                    <td>${client.nome}</td>
-                    <td>${client.email}</td>
-                    <td>${client.celular}</td>
-                    <td>${client.cidade}</td>
-                    <td>
-                        <button data-indice=${index} class="btn blue">Editar</button>
-                        <button class="btn red" type="button" >Excluir</button>
-                    </td>`
-    tabelaClientes.appendChild(newTr);
+const updateClient = (client, index) => {
+    const db = readDB()
+    db[index] = client
+    setDB(db)
 }
 
 const clearTable = () => {
-    const tabelaClientes = $('#tabelaClientes tbody')
-    while (tabelaClientes.firstChild) {
-        tabelaClientes.removeChild(tabelaClientes.lastChild)
+    const recordClient = document.querySelector('#tabelaClientes tbody')
+    while (recordClient.firstChild) {
+        recordClient.removeChild(recordClient.lastChild)
     }
 }
 
-const loadTable = () => {
-    const banco = readDb();
-    clearTable();
-    banco.forEach(createRow)
+const createRow = (client, index) => {
+    const recordClient = document.querySelector('#tabelaClientes tbody')
+    const newTr = document.createElement('tr')
+    newTr.innerHTML = `
+        <td>${client.nome}</td>
+        <td>${client.email}</td>
+        <td>${client.celular}</td>
+        <td>${client.cidade}</td>
+        <td>
+            <button type='button' class='button blue' data-action="editar-${index}">editar</button>
+            <button type='button' class='button red' data-action="deletar-${index}">deletar</button>
+        </td>
+    `
+    recordClient.appendChild(newTr)
+} 
+
+const updateTable = () => {
+    // 0 - limpar tabela
+    clearTable ()
+    // 1 - ler o banco de dados
+    const db = readDB()
+    // 2 - Criar linhas na tbody com os registros
+    db.forEach(createRow)
 }
+
+const clearInput = () => {
+    document.querySelector('#nome').value = ''
+    document.querySelector('#email').value = ''
+    document.querySelector('#celular').value =''
+    document.querySelector('#cidade').value = ''
+}
+
+const isValidForm = () => document.querySelector('.form').reportValidity()
 
 const saveClient = () => {
-    divMensagem.innerHTML = "Cadastro adicionado com sucesso!"
-    mensagem()
 
-    const banco = readDb()
-    const newClient = {
-        nome: $('#nome').value,
-        email: $('#email').value,
-        celular: $('#celular').value,
-        cidade: $('#cidade').value,
+    if (isValidForm()) {
+
+        const newClient = {
+            nome: document.querySelector('#nome').value,
+            email: document.querySelector('#email').value,
+            celular: document.querySelector('#celular').value,
+            cidade: document.querySelector('#cidade').value
+        }
+
+        const index = document.querySelector('#nome').dataset.index
+
+        if (index == '') {
+            insertDB(newClient)
+        } else {
+            updateClient(newClient, index)
+        }
+  
+        closeModal()
+  
+        clearInput()
+   
+        updateTable()
     }
-    banco.push(newClient)
-    localStorage.setItem('banco', JSON.stringify(banco))
-    closeModal()
-    clearInput()
-    loadTable()
+}
+
+const maskCel = (text) => {
+    
+    // Para criar um expressão regular (REGEX) em JS
+    // Usamos barra -> const cel /3430984/
+
+    // debugger
+    // F8 para mexar no código
+    // F10 para avançar o código
+    text = text.replace(/\D/g,"")
+    text = text.replace(/^(\d{2})(\d)/g, "($1) $2")
+    text = text.replace(/(\d)(\d{4})$/, "$1-$2")
+ 
+    return text
+}
+
+const applyMask = (event) =>{
+    event.target.value = maskCel (event.target.value)
 }
 
 const deleteClient = (index) => {
-
-    divMensagem.innerHTML = "Excluído com sucesso!"
-    mensagem()
-
-    const banco = readDb()
-    banco.splice(index, 1)
-    localStorage.setItem('banco', JSON.stringify(banco))
-    clearTable()
-    loadTable()
-
-}
-
-const updateCliente = () => {
-
-    saveClient()
-    deleteClient()
-
-    mensagem()
-}
-
-const showdataUpdate = (index) => {
-
-    $('#salvar').classList.add('displayNome')
-    $('#novoCliente').classList.add('displayNome')
-
-    $('#displayNome').classList.remove('displayNome')
-    $('.editarCliente').classList.remove('displayNome')
-
-    const banco = readDb();
-
-    const inputs = Array.from($$('.modal input'))
-    inputs[0].value = banco[index].nome
-    inputs[1].value = banco[index].email
-    inputs[2].value = banco[index].celular
-    inputs[3].value = banco[index].cidade
-
-    openModal()
-}
-
-const btn_click = (event) => {
-    const button = event.target
-    if (button.type == "button") {
-        const index = button.dataset.indice
-        deleteClient(index)
-        console.log(index)
-    } else if (button.type == "submit") {
-        const index = button.dataset.indice
-        showdataUpdate(index)
+    const db = readDB()
+    const resp = confirm(`Deseja realmente deletar ${db[index].nome}?`)
+    
+    if (resp) {
+        db.splice(index, 1)
+        setDB(db)
+        updateTable()
     }
 }
 
-const mensagem = () => {
-    $('#mensagem').classList.add('animate')
-
-    setTimeout(() => {
-        $('#mensagem').classList.remove('animate')
-    }, 6000);
+const editClient = (index) => {
+    const db = readDB()
+    document.querySelector('#nome').value = db[index].nome
+    document.querySelector('#email').value = db[index].email
+    document.querySelector('#celular').value = db[index].celular
+    document.querySelector('#cidade').value = db[index].cidade
+    document.querySelector('#nome').dataset.index = index
+    openModal();
 }
 
-function mask(inputNumero) {
-    setTimeout(function () {
-        const numeroSemMascara = mphone(inputNumero.value);
-        if (numeroSemMascara != inputNumero.value) {
-            inputNumero.value = numeroSemMascara;
-        }
-    }, 1);
-}
-
-function mphone(numeroSemMascara) {
-    var numeroComMascara = numeroSemMascara.replace(/\D/g, "");
-    numeroComMascara = numeroComMascara.replace(/^0/, "");
-    if (numeroComMascara.length > 10) {
-        numeroComMascara = numeroComMascara.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
-    } else if (numeroComMascara.length > 5) {
-        numeroComMascara = numeroComMascara.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
-    } else if (numeroComMascara.length > 2) {
-        numeroComMascara = numeroComMascara.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
-    } else {
-        numeroComMascara = numeroComMascara.replace(/^(\d*)/, "($1");
+const actionButttons = (event) => {
+    const element = event.target
+    if (element.type === 'button') {
+        const action = element.dataset.action.split('-')
+        if (action[0] === 'deletar') {
+            deleteClient(action[1])
+        } else (
+            editClient (action[1])
+        )
     }
-    return numeroComMascara;
 }
 
+document.querySelector('#cadastrarCliente')
+    .addEventListener('click', openModal)
 
-$('#cadastrarCliente').addEventListener('click', openModal)
+document.querySelector('#close')
+    .addEventListener('click', () => { closeModal(); clearInput() })
 
-$('#close').addEventListener('click', () => { closeModal(); clearInput() })
+document.querySelector('#cancelar')
+    .addEventListener('click', () => { closeModal(); clearInput() })
 
-$('#cancelar').addEventListener('click', () => { closeModal(); clearInput() })
+document.querySelector('#salvar')
+    .addEventListener('click', saveClient)
 
-$('#salvar').addEventListener('click', validateInputs)
+document.querySelector('#celular')
+    .addEventListener('keyup', applyMask)
 
-loadTable()
+document.querySelector('#tabelaClientes')
+    .addEventListener('click', actionButttons)
 
-$('#tabelaClientes').addEventListener('click', btn_click)
-
-$('#displayNome').addEventListener('click', updateCliente)
+updateTable ()

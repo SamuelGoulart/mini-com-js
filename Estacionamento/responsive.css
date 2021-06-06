@@ -20,6 +20,12 @@
     #modalEscolhaDeComprovante>.modal-content button {
         margin-left: 20px;
     }
+    .btnTres button{
+       width: 28vw;
+    }
+    .btnDois button{
+        width: 42vw;
+    }
 }
 
 /* RESPONSIVIDADE DOS MODAIS */
@@ -40,6 +46,9 @@
     }
     .input-container {
         margin: 10px 20vw 30px 20vw;
+    }
+    .modal {
+        overflow-y: scroll;
     }
 }
 
@@ -66,6 +75,12 @@
     }
     #tbody td:nth-child(n+2):nth-child(-n+3) {
         border-radius: 0px;
+    }
+    #tbody td:nth-child(2),
+    #placaEditar,
+    #placaComprovante,
+    #placaComprovanteEntrada{
+        text-transform: uppercase;
     }
     #tbody td:nth-child(4) {
         border-radius: 0px 0px 25px 25px;

@@ -6,20 +6,30 @@
     <title>Modal</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/tabela.css">
-    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/button.css">
-    <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="css/tabela.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/modal-content.css">
+    <link rel="stylesheet" href="css/modal-header.css">
+    <link rel="stylesheet" href="css/close-button.css">
+    <link rel="stylesheet" href="css/modal-form.css">
+    <link rel="stylesheet" href="css/modal-input.css">
+    <link rel="stylesheet" href="css/modal-footer.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="main.js" defer></script>
+
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>Clientes - LionWeb</h1>
     </header>
     <main>
-        <button value="Cadastrar Cliente" class="btn green" id="cadastrarCliente">Cadastrar Cliente</button>
-        <table class="table" id="tabelaClientes" >
+        <button value="Cadastrar Cliente" class="button green" id="cadastrarCliente">Cadastrar Cliente</button>
+        <table class="table" id="tabelaClientes">
             <thead>
                 <tr>
                     <th>Nome</th>
@@ -30,30 +40,26 @@
                 </tr>
             </thead>
             <tbody>
-                
+
             </tbody>
         </table>
-        <div id="mensagem" data-anime="right" >
-        </div>
         <div class="modal" id="modal">
-            <div class="modal__content">
-                <header class="modal__header">
-                    <h1 id="novoCliente" >Novo Cliente</h1>
-                    <h1 class="editarCliente displayNome">Editar Cliente</h1>
-                    <span id="close">&#10006;</span>
+            <div class="modal-content">
+                <header class="modal-header">
+                    <H1 id="tituloModal">Novo Cliente</H1>
+                    <span class="close-button" id="close">&#10006;</span>
                 </header>
-                <div class="modal__main">
-                    <form class="form">
-                        <input class="input-field" type="text" id="nome" placeholder="Ex.: Samuel Goulart"/>
-                        <input class="input-field" type="text" id="email" placeholder="Ex.: nome@exemplo.com"/>
-                        <input class="input-field" onkeypress="mask(this, mphone);" type="text" id="celular" placeholder="Ex.: (00) 0000-0000"/>
-                        <input class="input-field"  type="text" id="cidade" placeholder="Ex.: São Paulo"/>
-                    </form>
-                </div>
-                <footer class="modal__footer">
-                    <button class="btn green displayNome" id="displayNome">Editar</button>
-                    <button class="btn green" id="salvar">Salvar</button>
-                    <button class="btn blue"  id="cancelar">Cancelar</button>
+               
+                <form class="form">
+                    <input class="input-field" data-index="" type="text" id="nome" placeholder="Nome" required/>
+                    <input class="input-field" type="email" id="email" placeholder="E-mail" required/>
+                    <input class="input-field" type="text" id="celular" placeholder="Celular" pattern="\(?\d{2}\) ?9?\d{4}-?\d{4}" maxlength="15" required/>
+                    <input class="input-field" type="text" id="cidade" placeholder="Cidade" requird/>
+                </form>
+                
+                <footer class="modal-footer">
+                    <button type="submit" class="button green" id="salvar">Salvar</button>
+                    <button type="button" class="button blue" id="cancelar">Cancelar</button>
                 </footer>
             </div>
         </div>
@@ -63,6 +69,7 @@
             <small>Copyright &copy; Prof. Fernando Leonid</small>
         </div>
     </footer>
-    <script src="./main.js"></script>
+
+    
 </body>
 </html>
