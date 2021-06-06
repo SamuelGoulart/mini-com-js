@@ -1,6 +1,8 @@
 <h1  align="center" >Calculadora IMC</h1>
 
-<img align="right" src="giphy.gif" alt="Gif da Calculadora IMC">
+<a href="https://samuelgoulart.github.io/Projetos-com-JavaScript/Calculadora-IMC/">
+<img align="right" src="https://user-images.githubusercontent.com/62961331/120934951-ef003000-c6d6-11eb-998f-930bbc73ffdc.gif" alt="Gif da Calculadora IMC">
+</a>
 
 <h2>📕 Indice</h2>
 
@@ -18,10 +20,7 @@ Com um desafio para:
 
 &nbsp;&nbsp;&nbsp; Transformar os inputs da altura e peso,  que são do tipo number para o tipo range.
 
-<a href="https://www.youtube.com/watch?list=PLDgemkIT111AzoS1rB61sgMJbsEA4pyD2&v=RacwEvoTz_Y&feature=youtu.be">
-  <img src="icone_link.png" width="3%" alt="Icone de Link">
-</a>
-Aperte o ícone para ser levado até a aula no YouTube!
+Projeto desenvolvido durante o cruso  de técnico em desenvolvimento de sistemas
 
 <h3>🚀 Tecnologias utilizadas</h3>
 
@@ -35,6 +34,8 @@ Aperte o ícone para ser levado até a aula no YouTube!
 
 Clique no botão para ir até preview do projeto.
 
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/)
+<a href="https://samuelgoulart.github.io/Projetos-com-JavaScript/Calculadora-IMC/">
+<img width="492" alt="btnPreview" src="https://user-images.githubusercontent.com/62961331/120934920-c11aeb80-c6d6-11eb-957a-5791b7c2edac.png">
+</a>
 
 
