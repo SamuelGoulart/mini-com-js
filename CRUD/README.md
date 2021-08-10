@@ -33,4 +33,4 @@ Criação de uma tela de cadastro de clientes
 
 Clique no botão para ir até preview do projeto.
 
-[![Preview](https://user-images.githubusercontent.com/62961331/118410582-89d09600-b666-11eb-822b-df40552531cf.png)](https://samuelgoulart.github.io/mini-com-js/CRUD/)
+[![Preview](https://user-images.githubusercontent.com/62961331/118410582-89d09600-b666-11eb-822b-df40552531cf.png)](https://samuelgoulart.github.io/mini-projetos-js/CRUD/)
