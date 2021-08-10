@@ -32,6 +32,6 @@ por influenciadores digitais para divulgar outras redes e por empresas, que inse
 
 Clique no botão para ir até preview do projeto.
 
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/Linktree/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/mini-com-js/Linktree/index.html)
 
 
