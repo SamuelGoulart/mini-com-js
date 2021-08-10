@@ -36,6 +36,6 @@ A ideia desse projeto é um SlideShow, que é uma apresentação de uma s�
 Clique no botão para ir até preview do projeto.
 
 
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/Slideshow/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/mini-com-js/Slideshow/index.html)
 
 
