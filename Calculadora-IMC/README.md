@@ -1,6 +1,6 @@
 <h1  align="center" >Calculadora IMC</h1>
 
-<a href="https://samuelgoulart.github.io/mini-com-js/CRUD/Calculadora-IMC/">
+<a href="https://samuelgoulart.github.io/mini-projetos-js/Calculadora-IMC/">
 <img align="right" src="https://user-images.githubusercontent.com/62961331/120934951-ef003000-c6d6-11eb-998f-930bbc73ffdc.gif" alt="Gif da Calculadora IMC">
 </a>
 
@@ -34,7 +34,7 @@ Projeto desenvolvido durante o cruso  de técnico em desenvolvimento de sistemas
 
 Clique no botão para ir até preview do projeto.
 
-<a href="https://samuelgoulart.github.io/mini-com-js/CRUD/Calculadora-IMC/">
+<a href="https://samuelgoulart.github.io/mini-projetos-js/Calculadora-IMC/">
 <img width="492" alt="btnPreview" src="https://user-images.githubusercontent.com/62961331/120934920-c11aeb80-c6d6-11eb-957a-5791b7c2edac.png">
 </a>
 
