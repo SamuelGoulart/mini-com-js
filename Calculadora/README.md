@@ -1,18 +1,3 @@
-<h2 align="left" >🔥 Preview 
-  
-</br>
-</br>
-
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/Calculadora/index.html)
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/Calculadora/index.html)
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/Calculadora/index.html)
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/Calculadora/index.html)
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/Calculadora/index.html)
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/Calculadora/index.html)
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/Calculadora/index.html)
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/Calculadora/index.html)
-
-</br>
 
 <h1  align="center" >Calculadora</h1>
   
@@ -54,7 +39,7 @@ Este mini-projeto foi desenvolvimento durante atividade do curso de Técnico de 
 
 Clique no botão para ir até preview do projeto.
 
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/Calculadora/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/mini-com-js/Calculadora/index.html)
 
 
 
