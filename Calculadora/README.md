@@ -5,8 +5,9 @@
 </br>
 
 </h2>
-
+<a href="https://samuelgoulart.github.io/mini-projetos-js/Calculadora/index.html">
 <img align="right" src="https://user-images.githubusercontent.com/62961331/116889853-6d167600-ac03-11eb-908c-d88514d298fd.gif" alt="Gif do To-do lists">
+</a>
 
 
 <h2>📕 Indice</h2>
@@ -39,7 +40,7 @@ Este mini-projeto foi desenvolvimento durante atividade do curso de Técnico de 
 
 Clique no botão para ir até preview do projeto.
 
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/mini-com-js/Calculadora/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/mini-projetos-js/Calculadora/index.html)
 
 
 
