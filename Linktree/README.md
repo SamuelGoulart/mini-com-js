@@ -1,6 +1,8 @@
 <h1  align="center" >Linktree</h1>
 
+<a href="https://samuelgoulart.github.io/mini-projetos-js/Linktree/index.html">
 <img align="right" src="linktree.gif" alt="Gif linktree">
+</a>
 
 <h2>📕 Indice</h2>
 
@@ -32,6 +34,6 @@ por influenciadores digitais para divulgar outras redes e por empresas, que inse
 
 Clique no botão para ir até preview do projeto.
 
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/mini-com-js/Linktree/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/mini-projetos-js/Linktree/index.html)
 
 
