@@ -1,6 +1,8 @@
 <h1  align="center" >Lâmpada</h1>
 
+<a href="https://samuelgoulart.github.io/mini-projetos-js/Lampada/index.html">
 <img align="right" src="lampada.gif" alt="Gif lâmpada">
+</a>
 
 <h2>📕 Indice</h2>
 
@@ -41,6 +43,6 @@ Aperte o ícone para ser levado até a aula no YouTube!
 Clique no botão para ir até preview do projeto.
 
 
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/mini-com-js/Lampada/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/mini-projetos-js/Lampada/index.html)
 
 
