@@ -2,7 +2,7 @@
 
 <h1 align="center" >CRUD</h1>
 
-<a href="https://samuelgoulart.github.io/mini-com-js/CRUD/">
+<a href="https://samuelgoulart.github.io/mini-projetos-js/CRUD/">
 <img align="right" src="https://user-images.githubusercontent.com/62961331/118410121-4117dd80-b664-11eb-9578-835eaf17738c.gif" alt="Gif de cadastro cliente">
 </a>
 
