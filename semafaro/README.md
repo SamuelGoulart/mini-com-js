@@ -1,6 +1,8 @@
 <h1  align="center" >Semáforo</h1>
 
+<a href="https://samuelgoulart.github.io/mini-projetos-js/semafaro/index.html">
 <img align="right" src="semaforo.gif" alt="Gif Semáforo">
+</a>
 
 <h2>📕 Indice</h2>
 
@@ -41,6 +43,6 @@ Aperte o ícone para ser levado até a aula no YouTube!
 Clique no botão para ir até preview do projeto.
 
 
-[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/Projetos-com-JavaScript/semafaro/index.html)
+[![Preview](https://vercel.com/button)](https://samuelgoulart.github.io/mini-projetos-js/semafaro/index.html)
 
 
